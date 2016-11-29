@@ -43,39 +43,19 @@ angular.module('starter')
         var someData = [];
         $http.get('http://desktop-d4s7vsd:8091/ModeloRestv3/rest/autenticacion/getToken?us=' + name + '&pass=' + pw)
           .success(function (posts) {
-           /* angular.forEach(posts, function (post) {
-              someData.push(post.rol);
-            });*/
 
             if (posts.length == 1) {
               storeUserCredentials(posts);
-              resolve('Login success.');
+              resolve(VARIABLES_UTILES.AUTENTICACION_SATISFACTORIA);
             }
             else {
-              reject('Login Failed.');
+              reject(VARIABLES_UTILES.AUTENTICACION_FALLIDA);
             }
 
-          });
-
-
-        /*    var someData = $http.jsonp('http://localhost:8091/ModeloRestv3/rest/autenticacion/hello?us='+name+'&pass='+pw);
-            var yourData;
-              someData.then(function(response){
-                   yourData = response.data;
-                   storeUserCredentials(name + '.yourServerToken');
-                   resolve('Login success.');
-              });*/
-
-
-
-
-        /*   if ((name == 'admin' && pw == '1') || (name == 'user' && pw == '1')) {
-             // Make a request and receive your auth token from your server
-             storeUserCredentials(name + '.yourServerToken');
-             resolve('Login success.');
-           } else {
-             reject('Login Failed.');
-           }*/
+          }).error(function (data, status){
+                console.log("Error status : " + status);
+                reject(VARIABLES_UTILES.PROBLEMAS_CONEXION);
+            });
       });
     };
 

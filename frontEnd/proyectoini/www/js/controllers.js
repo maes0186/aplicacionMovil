@@ -1,11 +1,11 @@
 angular.module('starter')
 
-.controller('AppCtrl', function($scope, $state, $ionicPopup, AuthService, AUTH_EVENTS) {
+.controller('AppCtrl', function($scope, $state, $ionicPopup, AuthService, AUTH_EVENTS,VARIABLES_UTILES) {
   $scope.tokenUsuario=AuthService.authToken();
   $scope.$on(AUTH_EVENTS.notAuthorized, function(event) {
     var alertPopup = $ionicPopup.alert({
-      title: 'No autorizado!',
-      template: 'Tu no tienes los proviligios para acceder a esta sección'
+      title: VARIABLES_UTILES.NO_AUTORIZADO,
+      template: VARIABLES_UTILES.SIN_PRIVILEGIOS
     });
   });
 
@@ -13,8 +13,8 @@ angular.module('starter')
     AuthService.logout();
     $state.go('login');
     var alertPopup = $ionicPopup.alert({
-      title: 'Session Perdida!',
-      template: 'Por favor, vuleve a loguearte'
+      title: VARIABLES_UTILES.SESION_PERDIDA,
+      template: VARIABLES_UTILES.FAVOR_VOLVER_LOGIN
     });
   });
   $scope.setCurrentToken = function(token) {
@@ -23,7 +23,7 @@ angular.module('starter')
 
 })
 
-.controller('LoginCtrl', function($scope, $state, $ionicPopup, AuthService,md5) {
+.controller('LoginCtrl', function($scope, $state, $ionicPopup, AuthService,md5,VARIABLES_UTILES) {
   $scope.data = {};
 
   $scope.login = function(data) {
@@ -32,8 +32,8 @@ angular.module('starter')
        $state.go('main.dash', {}, {reload: true});
     }, function(err) {
       var alertPopup = $ionicPopup.alert({
-        title: 'Fallo Login!',
-        template: 'Por favor verifique sus credenciales!'
+        title: VARIABLES_UTILES.TITULO_FALLO_LOGIN,
+        template: err
       });
     });
   };

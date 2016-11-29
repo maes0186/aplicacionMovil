@@ -7,6 +7,14 @@ angular.module('starter')
 
 .constant('VARIABLES_UTILES', {
   tokenKey: 'tokenKey',
+  AUTENTICACION_SATISFACTORIA : 'Autenticación Satisfactoria',
+  AUTENTICACION_FALLIDA : 'Autenticación Fallida',
+  PROBLEMAS_CONEXION : 'Se han presentado problemas de conexión por favor intente mas tarde',
+  SIN_PRIVILEGIOS: 'Tu no tienes los priviligios para acceder a esta sección',
+  NO_AUTORIZADO: 'No autorizado!',
+  SESION_PERDIDA: 'Session Perdida!',
+  FAVOR_VOLVER_LOGIN: 'Por favor, vuelve a loguearte',
+  TITULO_FALLO_LOGIN: 'Fallo Login!'
 })
 
 .constant('USER_ROLES', {
