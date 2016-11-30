@@ -1,22 +1,38 @@
-<ion-view view-title="Dashboard" name="dashboard-view">
+<ion-view view-title="Tu Inversión" name="dashboard-view">
   <ion-nav-buttons side="right">
-    <button class="button icon-left ion-log-out button-stable" ng-click="logout()">Logout</button>
+    <button class="button icon-left ion-log-out button-positive" ng-click="logout()"></button>
   </ion-nav-buttons>
 
   <ion-content class="padding">
     <div class="row"><div class="col text-center">
-      <h3 class="title">Bienvenido {{tokenUsuario.nombre}}!</h3>
-      This could be your Dashboard.
-      <br><br><br>
-      <button class="button button-full button-positive" ng-click="performValidRequest()">
-        Hacer un request valido
-      </button>
-      <button class="button button-full button-energized" ng-click="performUnauthorizedRequest()">
-        Hacer un request no autorizado
-      </button>
-      <button class="button button-full button-assertive" ng-click="performInvalidRequest()">
-        Hacer un request sin token
-      </button>
+      <h4 class="title">Bienvenido {{tokenUsuario.nombre}}!</h4>
+      <br>
+
+  <h5 class="title">Por favor ingresa la siguiente información para calcular el detalle de tu inversión</h5>
+
+     
+      <br>
+      
+
+<div class="list">
+  <label class="item item-input item-floating-label">
+     <span class="input-label">Valor del apartamento</span>
+    <input type="text" name="discount" placeholder="Valor del apartamento" ng-model="model.value" currency-mask />
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Numero de años</span>
+      <input type="number" placeholder="Numero de años" >
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Porcentaje de la cuota inicial (%)</span>
+    <input type="number" placeholder="Porcentaje de la cuota inicial (%)" >
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Tasa de interés (%)</span>
+    <input type="number" placeholder="Tasa de interés  (%)" >
+  </label>
+</div>
+
       <br><br>
       {{response}}
     </div></div>
