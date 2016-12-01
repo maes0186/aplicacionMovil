@@ -18,7 +18,7 @@
      <h5 class="title">Valor de la cuota: </h5>
   </div>
   <div class="col">
-     <h5 class="title">{{datos.cuota}}</h5>
+     <h5 class="title">{{formatearValoresMoneda(datos.cuota)}}</h5>
   </div>
 </div>
  <div class="item item-divider">
@@ -56,6 +56,33 @@
   </div>
   <div class="col">
      <h5 class="title">{{formatearValoresMoneda((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)}}</h5>
+  </div>
+</div>
+<div class="item item-divider">
+   Otros valores
+  </div>
+<div class="row">
+  <div class="col">
+     <h5 class="title">Valor estimado de las escrituras: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{formatearValoresMoneda(datos.vApartamento*2.5/100)}}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+     <h5 class="title">Valor estimado del seguro: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100)}}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+     <h5 class="title">Valor cuota con seguro: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100+datos.cuota)}}</h5>
   </div>
 </div>
 
