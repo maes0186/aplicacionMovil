@@ -46,7 +46,8 @@ angular.module('starter', ['ionic','angular-md5','ngInputCurrency'])
     url: 'main/calculos',
     views: {
         'calculos-tab': {
-          templateUrl: 'templates/calculos.html'
+          templateUrl: 'templates/calculos.html',
+           controller: 'CalculosCtrl'
         }
     }
   });

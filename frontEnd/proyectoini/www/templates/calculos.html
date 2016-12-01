@@ -1,5 +1,9 @@
 <ion-view view-title="Calculos" name="dashboard-view">
   <ion-content class="padding">
+    <div class="list">
+   <div class="item item-divider">
+   Calculos datos financiados
+  </div>
      <div class="row">
   <div class="col">
      <h5 class="title">Valor del crédito: </h5>
@@ -17,5 +21,44 @@
      <h5 class="title">{{datos.cuota}}</h5>
   </div>
 </div>
+ <div class="item item-divider">
+   Calculos cuota inicial 
+  </div>
+
+<div class="row">
+  <div class="col">
+     <h5 class="title">Valor de la cuota inicial: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{datos.iniValorInicial}}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+     <h5 class="title">Valor faltante de la cuota inicial: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{formatearValoresMoneda(datos.vIniValorInicial-datos.iniAbono)}}</h5>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+     <h5 class="title">Meses: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{datos.iniMeses}}</h5>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+     <h5 class="title">Cuota Mensual: </h5>
+  </div>
+  <div class="col">
+     <h5 class="title">{{formatearValoresMoneda((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)}}</h5>
+  </div>
+</div>
+
+  </div>
   </ion-content>
 </ion-view>

@@ -62,11 +62,20 @@ $scope.datos = {};
     datos.cuota=numerador/denominador;
     datos.cuota=AuthService.formatearValoresMoneda(datos.cuota);
     datos.valorCredito=AuthService.formatearValoresMoneda(valorCredito);
+    datos.vIniValorInicial=datos.vApartamento*datos.pCuotaInicial/100;
+    datos.iniValorInicial=AuthService.formatearValoresMoneda(datos.vIniValorInicial);
   $scope.datos=datos; 
   };
 
- 
-
- 
+ $scope.formatearValoresMoneda = function(valor) {
+   return AuthService.formatearValoresMoneda(valor);
+ };
 }
-);
+)
+.controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+ $scope.formatearValoresMoneda = function(valor) {
+   return AuthService.formatearValoresMoneda(valor);
+ };
+})
+
+;

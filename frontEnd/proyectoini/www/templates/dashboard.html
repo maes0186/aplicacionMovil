@@ -6,18 +6,13 @@
   <ion-content class="padding">
     <div class="row"><div class="col text-center">
       <h4 class="title">Bienvenido {{tokenUsuario.nombre}}!</h4>
-      <br>
-
-  <h5 class="title">Por favor ingresa la siguiente información para calcular el detalle de tu inversión</h5>
-
-     
-      <br>
-      
-
 <div class="list">
+  <div class="item item-divider">
+    Valores para el financiamiento
+  </div>
   <label class="item item-input item-floating-label">
      <span class="input-label">Valor del apartamento</span>
-    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="Valor del apartamento"  />
+    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="Valor del apartamento" ng-init="datos.vApartamento=0" />
     
   </label>
   <label class="item item-input item-floating-label">
@@ -32,7 +27,22 @@
     <span class="input-label">Tasa de interés (%)</span>
     <input type="number" placeholder="Tasa de interés anual (%)" ng-model="datos.tasa" ng-init="datos.tasa=12">
   </label>
+  <div class="item item-divider">
+    Valores de la cuota inicial 
+  </div>
+  <div class="item item-divider">
+    {{formatearValoresMoneda(datos.vApartamento*datos.pCuotaInicial/100)}}
+  </div>
+   <label class="item item-input item-floating-label">
+     <span class="input-label">Número de meses</span>
+    <input type="text"  ng-model="datos.iniMeses" placeholder="Número de meses" ng-init="datos.iniMeses=12" />
+  </label>
+   <label class="item item-input item-floating-label">
+     <span class="input-label">Abono a la cuota inicial</span>
+    <input type="text"  ng-input-currency ng-model="datos.iniAbono" placeholder="Abono a la cuota inicial" ng-init="datos.iniAbono=0" />
 </div>
+
+
     </div></div>
   </ion-content>
 </ion-view>
