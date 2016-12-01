@@ -1,0 +1,58 @@
+<ion-view view-title="Comparaciones" name="dashboard-view">
+  <ion-content class="padding">
+    <div class="list">
+  
+
+   <div class="row">
+
+  <div class="button-bar bar-royal">
+          <a class="button">Tasa</a>
+          <a class="button">Couta</a>
+        </div>
+   </div>
+
+<div class="row">
+  <div class="col"><input type="number" placeholder="Tasa1"  ng-model="datos.tasa1" ng-init="datos.tasa1=12">
+  </div>
+  <div class="col">
+ <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa1))}} </h5>
+  </div>
+
+</div>
+ <div class="item item-divider">
+  </div>
+<div class="row">
+  <div class="col"><input type="number" placeholder="Tasa2"  ng-model="datos.tasa2" ng-init="datos.tasa2=11">
+  </div>
+  <div class="col">
+ <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa2))}} </h5>
+
+  </div>
+
+</div>
+ <div class="item item-divider">
+  </div>
+<div class="row">
+  <div class="col"><input type="number" placeholder="Tasa3"  ng-model="datos.tasa3" ng-init="datos.tasa3=10">
+  </div>
+  <div class="col">
+ <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa3))}} </h5>
+
+  </div>
+
+</div>
+ <div class="item item-divider">
+  </div>
+<div class="row">
+  <div class="col"><input type="number" placeholder="Tasa4"  ng-model="datos.tasa4" ng-init="datos.tasa4=9">
+  </div>
+  <div class="col">
+ <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4))}} </h5>
+  </div>
+</div>
+
+  
+
+  </div>
+  </ion-content>
+</ion-view>

@@ -45,6 +45,15 @@ angular.module('starter', ['ionic','ngInputCurrency'])
            controller: 'CalculosCtrl'
         }
     }
+  })
+  .state('main.comparar', {
+    url: 'main/comparar',
+    views: {
+        'comparar-tab': {
+          templateUrl: 'templates/comparar.html',
+           controller: 'CompararCtrl'
+        }
+    }
   });
   $urlRouterProvider.otherwise('/main/dash');
 })
