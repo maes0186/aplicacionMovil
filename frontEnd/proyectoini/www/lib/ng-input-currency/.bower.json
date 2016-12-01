@@ -1,0 +1,34 @@
+{
+  "name": "ng-input-currency",
+  "description": "input formatter as currency with Angular",
+  "main": "dist/ng-input-currency.js",
+  "authors": [
+    "Jesper Lindstrøm Nielsen <me@jstroem.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "currency",
+    "input",
+    "format"
+  ],
+  "homepage": "https://github.com/jstroem/ng-input-currency",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "0.9.4",
+  "_release": "0.9.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.4",
+    "commit": "d26a6a562094041218e030448e14f3478d1089df"
+  },
+  "_source": "https://github.com/jstroem/ng-input-currency.git",
+  "_target": "^0.9.4",
+  "_originalSource": "ng-input-currency"
+}

@@ -17,24 +17,22 @@
 <div class="list">
   <label class="item item-input item-floating-label">
      <span class="input-label">Valor del apartamento</span>
-    <input type="text" name="discount" placeholder="Valor del apartamento" ng-model="model.value" currency-mask />
+    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="Valor del apartamento" value="" />
+    
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Numero de años</span>
-      <input type="number" placeholder="Numero de años" >
+      <input type="number" placeholder="Numero de años" ng-model="datos.nAnios">
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Porcentaje de la cuota inicial (%)</span>
-    <input type="number" placeholder="Porcentaje de la cuota inicial (%)" >
+    <input type="number" placeholder="Porcentaje de la cuota inicial (%)" ng-model="datos.pCuotaInicial">
   </label>
    <label class="item item-input item-floating-label">
     <span class="input-label">Tasa de interés (%)</span>
-    <input type="number" placeholder="Tasa de interés  (%)" >
+    <input type="number" placeholder="Tasa de interés anual (%)" ng-model="datos.tasa">
   </label>
 </div>
-
-      <br><br>
-      {{response}}
     </div></div>
   </ion-content>
 </ion-view>

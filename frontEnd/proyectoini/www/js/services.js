@@ -49,6 +49,7 @@ angular.module('starter')
               resolve(VARIABLES_UTILES.AUTENTICACION_SATISFACTORIA);
             }
             else {
+              console.log("Problemas de login");
               reject(VARIABLES_UTILES.AUTENTICACION_FALLIDA);
             }
 

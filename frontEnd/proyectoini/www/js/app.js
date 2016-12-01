@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','angular-md5'])
+angular.module('starter', ['ionic','angular-md5','ngInputCurrency'])
 // bower install angular-mocks --save
 // <script src="lib/angular-mocks/angular-mocks.js"></script>
 // https://docs.angularjs.org/api/ngMockE2E
@@ -30,7 +30,8 @@ angular.module('starter', ['ionic','angular-md5'])
   .state('main', {
     url: '/',
     abstract: true,
-    templateUrl: 'templates/main.html'
+    templateUrl: 'templates/main.html',
+    controller: 'MainCtrl'
   })
   .state('main.dash', {
     url: 'main/dash',
@@ -41,23 +42,12 @@ angular.module('starter', ['ionic','angular-md5'])
         }
     }
   })
-  .state('main.public', {
-    url: 'main/public',
+  .state('main.calculos', {
+    url: 'main/calculos',
     views: {
-        'public-tab': {
-          templateUrl: 'templates/public.html'
+        'calculos-tab': {
+          templateUrl: 'templates/calculos.html'
         }
-    }
-  })
-  .state('main.admin', {
-    url: 'main/admin',
-    views: {
-        'admin-tab': {
-          templateUrl: 'templates/admin.html'
-        }
-    },
-    data: {
-      authorizedRoles: [USER_ROLES.admin]
     }
   });
   $urlRouterProvider.otherwise('/main/dash');

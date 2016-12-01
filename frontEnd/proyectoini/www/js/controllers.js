@@ -46,6 +46,17 @@ angular.module('starter')
   };
 
  
+})
+
+.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+$scope.datos = {};
+
+  $scope.calcularValores = function(datos) {
+  $scope.datos=datos; 
+  };
 
  
-});
+
+ 
+}
+);
