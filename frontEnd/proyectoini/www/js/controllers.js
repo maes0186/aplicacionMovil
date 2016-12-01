@@ -52,6 +52,16 @@ angular.module('starter')
 $scope.datos = {};
 
   $scope.calcularValores = function(datos) {
+    var pCredito=100-datos.pCuotaInicial;
+    var valorCredito=datos.vApartamento*pCredito/100;
+    var i=datos.tasa/1200;
+    var meses=datos.nMeses;
+    var comun=Math.pow(1+i,meses);
+    var numerador=valorCredito*comun*i;
+    var denominador=comun-1;
+    datos.cuota=numerador/denominador;
+    datos.cuota=AuthService.formatearValoresMoneda(datos.cuota);
+    datos.valorCredito=AuthService.formatearValoresMoneda(valorCredito);
   $scope.datos=datos; 
   };
 

@@ -19,6 +19,10 @@ angular.module('starter')
       useCredentials(token);
     }
 
+    var formatearValoresMoneda=function (numero) {
+      return '$'+numero.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    }
+
     function useCredentials(token) {
       role = token[0].rol;
       isAuthenticated = true;
@@ -78,7 +82,8 @@ angular.module('starter')
       logout: logout,
       isAuthorized: isAuthorized,
       isAuthenticated: function () { return isAuthenticated; },
-      authToken: function () { return authToken; }
+      authToken: function () { return authToken; },
+      formatearValoresMoneda:formatearValoresMoneda
       
     };
   })
