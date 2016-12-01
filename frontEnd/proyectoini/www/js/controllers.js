@@ -17,7 +17,7 @@ $scope.datos = {};
 
   $scope.calcularValores = function(datos) {
     var pCredito=100-datos.pCuotaInicial;
-    var valorCredito=datos.vApartamento*pCredito/100;
+    var valorCredito=datos.vApartamento*pCredito/100-datos.vAbono;
     var i=datos.tasa/1200;
     var meses=datos.nMeses;
     var comun=Math.pow(1+i,meses);

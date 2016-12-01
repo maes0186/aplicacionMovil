@@ -24,6 +24,12 @@
     <span class="input-label">Tasa de interés (%)</span>
     <input type="number" placeholder="Tasa de interés anual (%)" ng-model="datos.tasa" ng-init="datos.tasa=12">
   </label>
+<label class="item item-input item-floating-label">
+    <span class="input-label">Abono al credito</span>
+    <input type="text" ng-input-currency placeholder="Abono cuota inicial" ng-model="datos.vAbono" ng-init="datos.vAbono=0">
+  </label>
+  
+
   <div class="item item-divider">
     Valores de la cuota inicial 
   </div>
