@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','ngInputCurrency','chart.js'])
+angular.module('starter', ['ionic','ngInputCurrency','chart.js','pdf'])
 // bower install angular-mocks --save
 // <script src="lib/angular-mocks/angular-mocks.js"></script>
 // https://docs.angularjs.org/api/ngMockE2E
@@ -52,6 +52,15 @@ angular.module('starter', ['ionic','ngInputCurrency','chart.js'])
         'comparar-tab': {
           templateUrl: 'templates/comparar.html',
            controller: 'CompararCtrl'
+        }
+    }
+  })
+  .state('main.reportes', {
+    url: 'main/reportes',
+    views: {
+        'reportes-tab': {
+          templateUrl: 'templates/reportes.html',
+           controller: 'ReportesCtrl'
         }
     }
   });
