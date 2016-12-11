@@ -1,18 +1,22 @@
 <ion-view view-title="Reportes" name="dashboard-view">
   <ion-content class="padding">
-    <div class="list">
-  
+   
 
-   <div class="row">
-   <p><button ng-click="crearReporte()" class="button icon-left  button-positive">Generar reporte</button></p>
-
-   </div>
-
-
- 
-
-  
-
-  </div>
+  <div class="list">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">USUARIO</span>
+    <input type="text" placeholder="USUARIO" ng-model="datos.rUsuario">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">ASESOR</span>
+    <input type="text" placeholder="ASESOR" ng-model="datos.rAsesor">
+  </label>
+    <label class="item item-input item-floating-label">
+    <span class="input-label">DESCRIPCION</span>
+    <input type="text" placeholder="DESCRIPCION" ng-model="datos.rDescripcion">
+  </label>
+  <br>
+  <button ng-click="crearReporte()" class="button icon-left  button-positive">Generar reporte</button>
+</div>
   </ion-content>
 </ion-view>

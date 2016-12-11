@@ -17,50 +17,61 @@ angular.module('starter')
 $scope.crearReporte=function(){
 var vr = [[],[]];
 vr[0]=[ 
+   'USUARIO',
+   'ASESOR',
+   'DESCRIPCION'
+];
+vr[1]=[ 
+   $scope.datos.rUsuario,
+   $scope.datos.rAsesor,
+   $scope.datos.rDescripcion
+];
+
+vr[2]=[ 
    'VALOR DEL INMUEBLE',
    'VALOR DEL CREDITO',
    'MESES DEL CREDITO',
    'ABONO AL CREDITO',
    'TASA DE INTERES (%)'
 ];
-vr[1]=[ 
+vr[3]=[ 
    $scope.datos.fVApartamento,
    $scope.datos.valorCredito,
    $scope.datos.nMeses.toString(),
    $scope.datos.fVAbono,
    $scope.datos.tasa.toString()
 ];
-vr[2]=[ 
+vr[4]=[ 
    'CUOTA INICIAL (%)',
    'VALOR TOTAL CUOTA INICIAL',
    'ABONO A LA CUOTA INICIAL',
    'VALOR DE LA CUOTA MENSUAL DE LA INCIAL'
 ];
-vr[3]=[ 
+vr[5]=[ 
     $scope.datos.pCuotaInicial.toString(),
    $scope.datos.fValorInicial,
    $scope.datos.fIniAbono,
    $scope.datos.fCuotaInicial
 ];
-vr[4]=[ 
+vr[6]=[ 
    'VALOR ESTIMADO DE LAS ESCRITURAS',
    'VALOR ESTIMADO DEL SEGURO',
    'VALOR DE LA CUOTA CON SEGURO'
 ];
-vr[5]=[ 
+vr[7]=[ 
     $scope.datos.fEscrituras,
    $scope.datos.fSeguros,
    $scope.datos.fCoutaSeguros
 ];
 
-console.log($scope.datos);
+//console.log($scope.datos);
 
 var docDefinition = {
 
   // by default we use portrait, you can change it to landscape if you wish
   pageOrientation: 'landscape',
   content: [
-    'DATOS DEL INMBUEBLE',
+    'DATOS BASICOS',
     ' ',
     {
       table: {
@@ -74,7 +85,7 @@ var docDefinition = {
       }
     },
     ' ',
-    'DATOS DE LA CUOTA INICIAL',
+    'DATOS DEL INMBUEBLE',
     ' ',
     {
       table: {
@@ -88,7 +99,7 @@ var docDefinition = {
       }
     },
     ' ',
-    'OTROS VALORES',
+    'DATOS DE LA CUOTA INICIAL',
     ' ',
     {
       table: {
@@ -98,6 +109,20 @@ var docDefinition = {
         body: [
           vr[4],
           vr[5]
+        ]
+      }
+    },
+    ' ',
+    'OTROS VALORES',
+    ' ',
+    {
+      table: {
+        // headers are automatically repeated if the table spans over multiple pages
+        // you can declare how many rows should be treated as headers
+        headerRows: 1,
+        body: [
+          vr[6],
+          vr[7]
         ]
       }
     }
