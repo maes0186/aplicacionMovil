@@ -2,77 +2,147 @@
   <ion-content class="padding">
     <div class="list">
   
-
-   <div class="row">
-
-  <div class="button-bar bar-royal">
-          <a class="button">Tasa Anual (%)</a>
-          <a class="button">Couta ($)</a>
-        </div>
+<div class="tabla">
+   <div class="row header">
+          <div class="col text-center">Tasa Anual (%)</div>
+          <div class="col text-center">Couta ($)</div>
+          <div class="col text-center">Banco o Entidad</div>
    </div>
 
 <div class="row">
 
 
 
-  <div class="col">
+  <div class="col col-33">
+
+
+    
+  <label class="item item-input">
+    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa1">
+    </label>
+
     <div class="item range range-positive">
-    <span class="input-label">{{datos.tasa1}}%</span>
-    <input type="range"  min="0" max="100"  ng-model="datos.tasa1" ng-change="init()" >
+     
+  
+    <input type="range"  min="0" max="100"  ng-model="datos.tasa1" ng-change="init()" ng-init="datos.tasa1=13" >
+
   </div>
   </div>
-  <div class="col">
+  <div class="col col-33 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa1))}} </h5>
   </div>
-
+  
+<div class="col col-33 text-center">
+  <label class="item item-input">
+  <input type="text"  class="text-center" placeholder="Banco1" ng-model="datos.banco1" ng-init="datos.banco1='B1'">
+</label>
+  </div>
 </div>
+   
 
 <div class="row">
-    <div class="col">
+    <div class="col col-33">
+        <label class="item item-input">
+    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa2">
+    </label>
     <div class="item range range-positive">
-    <span class="input-label">{{datos.tasa2}}%</span>
-    <input type="range"  min="0" max="100"   ng-model="datos.tasa2" ng-change="init()">
+    <input type="range"  min="0" max="100"   ng-model="datos.tasa2" ng-change="init()" ng-init="datos.tasa2=12">
   </div>
   </div>
-  <div class="col">
+  <div class="col col-33 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa2))}} </h5>
 
   </div>
+  <div class="col col-33 text-center">
+     <label class="item item-input">
+  <input type="text" class="text-center" placeholder="Banco2" ng-model="datos.banco2" ng-init="datos.banco2='B2'">
+</label>
+  </div>
 
 </div>
 
 <div class="row">
-    <div class="col">
+    <div class="col col-33">
+        <label class="item item-input">
+    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa3">
+    </label>
     <div class="item range range-positive">
-    <span class="input-label">{{datos.tasa3}}%</span>
-    <input type="range"  min="0" max="100"   ng-model="datos.tasa3" ng-change="init()">
+    <input type="range"  min="0" max="100"   ng-model="datos.tasa3" ng-change="init()" ng-init="datos.tasa3=11">
   </div>
   </div>
-  <div class="col">
+  <div class="col col-33 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa3))}} </h5>
 
   </div>
+<div class="col col-33 text-center">
+     <label class="item item-input">
+  <input type="text" class="text-center" placeholder="Banco3" ng-model="datos.banco3" ng-init="datos.banco3='B3'">
+</label>
+  </div>
 
 </div>
 
 <div class="row">
-    <div class="col">
+    <div class="col col-33">
+       <label class="item item-input">
+    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa4">
+    </label>
     <div class="item range range-positive">
-    <span class="input-label">{{datos.tasa4}}%</span>
-    <input type="range"  min="0" max="100"   ng-model="datos.tasa4" ng-change="init()">
+    <input type="range"  min="0" max="100"   ng-model="datos.tasa4" ng-change="init()" ng-init="datos.tasa4=10">
   </div>
   </div>
-  <div class="col">
+  <div class="col col-33 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4))}} </h5>
   </div>
-</div>
-<div class="item item-divider">
+  <div class="col col-33 text-center">
+     <label class="item item-input">
+  <input type="text" class="text-center" placeholder="Banco4" ng-model="datos.banco4" ng-init="datos.banco4='B4'">
+</label>
   </div>
-<div class="row">
-  <canvas id="bar" class="chart chart-bar" 
-  chart-data="data2" chart-labels="labels2"> chart-series="series2"
-</canvas
 </div>
+ </div>
+<div class="item item-divider">
+  <div class="col text-center">
+  COMPARACIONES ENTRE TASAS
+  </div>
+  </div>
+<div class="tabla">
+<div class="row header">
+          <div class="col col-20 bloqueado textoMediano"></div>
+          <div class="col col-20 textoMediano">{{datos.banco1+"("+datos.tasa1+"%)"}}</div>
+          <div class="col col-20 textoMediano">{{datos.banco2+"("+datos.tasa2+"%)"}}</div>
+          <div class="col col-20 textoMediano">{{datos.banco3+"("+datos.tasa3+"%)"}}</div>
+          <div class="col col-20 textoMediano">{{datos.banco4+"("+datos.tasa4+"%)"}}</div>
+        </div>
+        <div class="row" >
+           <div class="col col-20 colorCabecera textoMediano">{{datos.banco1+"("+datos.tasa1+"%)"}}</div>
+          <div class="col col-20 bloqueado"></div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa2)-obtenerCuota(datos,datos.tasa1))}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa3)-obtenerCuota(datos,datos.tasa1))}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4)-obtenerCuota(datos,datos.tasa1))}}</div>
+        </div>
+         <div class="row" >
+            <div class="col col-20 colorCabecera textoMediano">{{datos.banco2+"("+datos.tasa2+"%)"}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa1)-obtenerCuota(datos,datos.tasa2))}}</div>
+          <div class="col col-20 bloqueado"></div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa3)-obtenerCuota(datos,datos.tasa2))}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4)-obtenerCuota(datos,datos.tasa2))}}</div>
+        </div>
+         <div class="row" >
+            <div class="col col-20 colorCabecera textoMediano">{{datos.banco3+"("+datos.tasa3+"%)"}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa1)-obtenerCuota(datos,datos.tasa3))}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa2)-obtenerCuota(datos,datos.tasa3))}}</div>
+          <div class="col col-20 bloqueado"></div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4)-obtenerCuota(datos,datos.tasa3))}}</div>
+        </div>
+         <div class="row" >
+            <div class="col col-20 colorCabecera textoMediano">{{datos.banco4+"("+datos.tasa4+"%)"}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa1)-obtenerCuota(datos,datos.tasa4))}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa2)-obtenerCuota(datos,datos.tasa4))}}</div>
+          <div class="col col-20 textoPequeno">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa3)-obtenerCuota(datos,datos.tasa4))}}</div>
+          <div class="col col-20 bloqueado"></div>
+        </div>
+<div>
 
   
 

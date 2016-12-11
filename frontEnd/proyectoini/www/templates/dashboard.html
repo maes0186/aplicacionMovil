@@ -8,25 +8,35 @@
     Valores para el financiamiento
   </div>
   <label class="item item-input item-floating-label">
-     <span class="input-label">Valor del apartamento</span>
-    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="Valor del apartamento" ng-init="datos.vApartamento=0" />
     
+     <span class="input-label">Valor del apartamento</span>
+     <label class="item item-input">
+    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="Valor del apartamento" ng-init="datos.vApartamento=0" />
+     </label>
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Numero de meses</span>
+    <label class="item item-input">
       <input type="number" placeholder="Numero de meses" ng-model="datos.nMeses" ng-init="datos.nMeses=180">
+    </label>
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Porcentaje de la cuota inicial (%)</span>
+    <label class="item item-input">
     <input type="number" placeholder="Porcentaje de la cuota inicial (%)" ng-model="datos.pCuotaInicial" ng-init="datos.pCuotaInicial=30">
+    </label>
   </label>
    <label class="item item-input item-floating-label">
     <span class="input-label">Tasa de interés (%)</span>
+    <label class="item item-input">
     <input type="number" placeholder="Tasa de interés anual (%)" ng-model="datos.tasa" ng-init="datos.tasa=12">
+    </label>
   </label>
 <label class="item item-input item-floating-label">
     <span class="input-label">Abono al credito</span>
+    <label class="item item-input">
     <input type="text" ng-input-currency placeholder="Abono cuota inicial" ng-model="datos.vAbono" ng-init="datos.vAbono=0">
+    </label>
   </label>
   
 
@@ -38,11 +48,15 @@
   </div>
    <label class="item item-input item-floating-label">
      <span class="input-label">Número de meses</span>
+    <label class="item item-input">
     <input type="text"  ng-model="datos.iniMeses" placeholder="Número de meses" ng-init="datos.iniMeses=12" />
+    </label>
   </label>
    <label class="item item-input item-floating-label">
      <span class="input-label">Abono a la cuota inicial</span>
+    <label class="item item-input">
     <input type="text"  ng-input-currency ng-model="datos.iniAbono" placeholder="Abono a la cuota inicial" ng-init="datos.iniAbono=0" />
+    </label>
 </div>
 
 

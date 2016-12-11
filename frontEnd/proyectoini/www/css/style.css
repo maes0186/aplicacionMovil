@@ -1,1 +1,32 @@
 /* Empty. Add your own CSS if you like */
+.tabla .header .col {
+    background-color: #E6E6E6;
+}
+
+.tabla .col {
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    
+}
+
+.tabla .bloqueado{
+    background-color:beige;
+}
+.tabla .colorCabecera {
+    background-color: #E6E6E6;
+}
+
+.tabla .col:last-child {
+    border-right: solid 1px grey;
+}
+
+.tabla .row:last-child .col {
+    border-bottom: solid 1px grey;
+}
+.tabla .textoPequeno {
+    font-size: 70%;
+}
+.tabla .textoMediano {
+    font-size: 80%;
+}

@@ -3,7 +3,7 @@ angular.module('starter')
   .service('AuthService', function ($q, $http,VARIABLES_UTILES) {
     var formatearValoresMoneda=function (numero) {
        if(isNaN(numero))return '$0';
-      return '$'+numero.toFixed(2).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+      return '$'+numero.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     };
     var calcularCuota=function (datos,tasa) {
       var valorCredito=obtenerValorCredito(datos);
