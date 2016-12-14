@@ -1,8 +1,14 @@
 (function () {
     angular.module('starter').controller('ReportesCtrl', 
-    ['$scope', '$ionicModal', 'InvoiceService','$cordovaFile' ,'$ionicPlatform',ReportesCtrl]);
+    ['$scope', '$ionicModal', 'InvoiceService','$cordovaFile' ,'$ionicPlatform',ReportesCtrl])
+ 
+//.run(function($ionicPlatform,MessagesService) {
+   // $ionicPlatform.ready(function() {
 
     function ReportesCtrl($scope, $ionicModal, InvoiceService,$cordovaFile,$ionicPlatform) {
+     //    $ionicPlatform.ready(function() {
+        
+
         var vm = this;
 
         setDefaultsForPdfViewer($scope);
@@ -25,16 +31,13 @@
                     vm.modal.show();
                 });
         };
-          $ionicPlatform.ready(function(){
+        //  $ionicPlatform.ready(function(){
       
          vm.guardarReporte = function () {
              
-             
-   
-
             InvoiceService.createPdf($scope.datos)
                 .then(function (pdf) {
-                    console.log(cordova);
+                    ionic.Platform.ready(function(){
                     var blob = new Blob([pdf], { type: 'application/pdf' });
                     $scope.pdfUrl = URL.createObjectURL(blob);
                 
@@ -61,10 +64,12 @@
                     // Display the modal view
                     vm.modal.show();
                 })
+            }
+                )
              
 
-        }
-                                      });
+        };
+                                   //   });
 
         // Clean up the modal view.
         $scope.$on('$destroy', function () {
@@ -104,7 +109,9 @@
         };
 
         return vm;
+       // });
     }
+
 
     function setDefaultsForPdfViewer($scope) {
         $scope.scroll = 0;
@@ -123,7 +130,7 @@
         };
     }
 
-   
+ //})});  
 
 
 })();
