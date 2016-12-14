@@ -1,8 +1,11 @@
 <ion-view view-title="Reportes" name="dashboard-view">
-  <ion-content class="padding">
-   
-
-  <div class="list">
+  <body ng-app="starter">  
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">PDF Tutorial</h1>
+      </ion-header-bar>
+      <ion-content ng-controller="ReportesCtrl as vm" class="padding">
+         <div class="list">
   <label class="item item-input item-floating-label">
     <span class="input-label">USUARIO</span>
     <input type="text" placeholder="USUARIO" ng-model="datos.rUsuario">
@@ -16,7 +19,23 @@
     <input type="text" placeholder="DESCRIPCION" ng-model="datos.rDescripcion">
   </label>
   <br>
-  <button ng-click="crearReporte()" class="button icon-left  button-positive">Generar reporte</button>
 </div>
-  </ion-content>
+        <p><button ng-click="vm.createInvoice()" class="button icon-left  button-positive">Generar reporte</button></p> 
+      </ion-content>
+    </ion-pane>
+</body>  
+
+<script id="pdf-viewer.html" type="text/ng-template">  
+    <ion-modal-view>
+    <ion-content>
+
+      <ng-pdf ng-if="pdfUrl" template-url="templates/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
+
+
+</div>
+
+      
+    </ion-content>
+    </ion-modal-view>
+</script>
 </ion-view>

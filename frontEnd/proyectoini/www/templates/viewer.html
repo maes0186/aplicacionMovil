@@ -1,0 +1,18 @@
+<nav>
+
+ <div class="row">
+  <div class="col col-80">
+  <button class="button icon-left ion-plus-round button-stable" ng-click="zoomIn()"></button>
+  <button class="button ion-refresh button-stable" ng-click="fit()"></button>
+  <button class="button icon-left ion-minus-round button-stable" ng-click="zoomOut()"></button>
+ 
+  </div>
+  <div class="col col-20">
+       <button ng-click="vm.modal.hide()" class="button ion-close-round button-stable "></button>
+  </div>
+ </div>
+ 
+</nav>
+<hr>
+{{loading}}
+<canvas id="pdf" class="rotate0"></canvas>
