@@ -7,6 +7,10 @@
   "dependencies": {
     "angular-mocks": "^1.5.8",
     "angular-md5": "^0.1.10",
-    "ng-input-currency": "^0.9.4"
+    "ng-input-currency": "^0.9.4",
+    "ngCordova": "^0.1.27-alpha"
+  },
+  "resolutions": {
+    "angular": "1.6.0"
   }
 }

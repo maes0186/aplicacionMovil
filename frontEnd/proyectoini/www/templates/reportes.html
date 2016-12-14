@@ -20,7 +20,15 @@
   </label>
   <br>
 </div>
-        <p><button ng-click="vm.createInvoice()" class="button icon-left  button-positive">Generar reporte</button></p> 
+          <div class="row">
+              <div class="col col-50">
+                  <button ng-click="vm.createInvoice()" class="button icon-left  button-positive">Generar reporte</button>
+              </div>
+              <div class="col col-50">
+                  <button ng-click="vm.guardarReporte()" class="button icon-left  button-positive">Guardar reporte</button>
+              </div>
+          </div>
+
       </ion-content>
     </ion-pane>
 </body>  

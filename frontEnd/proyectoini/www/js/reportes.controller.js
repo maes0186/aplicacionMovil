@@ -1,7 +1,8 @@
 (function () {
-    angular.module('starter').controller('ReportesCtrl', ['$scope', '$ionicModal', 'InvoiceService', ReportesCtrl]);
+    angular.module('starter').controller('ReportesCtrl', 
+    ['$scope', '$ionicModal', 'InvoiceService','$cordovaFile' ,'$ionicPlatform',ReportesCtrl]);
 
-    function ReportesCtrl($scope, $ionicModal, InvoiceService) {
+    function ReportesCtrl($scope, $ionicModal, InvoiceService,$cordovaFile,$ionicPlatform) {
         var vm = this;
 
         setDefaultsForPdfViewer($scope);
@@ -20,11 +21,50 @@
                 .then(function (pdf) {
                     var blob = new Blob([pdf], { type: 'application/pdf' });
                     $scope.pdfUrl = URL.createObjectURL(blob);
-
                     // Display the modal view
                     vm.modal.show();
                 });
         };
+          $ionicPlatform.ready(function(){
+      
+         vm.guardarReporte = function () {
+             
+             
+   
+
+            InvoiceService.createPdf($scope.datos)
+                .then(function (pdf) {
+                    console.log(cordova);
+                    var blob = new Blob([pdf], { type: 'application/pdf' });
+                    $scope.pdfUrl = URL.createObjectURL(blob);
+                
+                var pathFile = "";
+                var fileName = "report.pdf";
+                var contentFile = blob;
+
+                if (ionic.Platform.isIOS()) {
+                    var pathFile = cordova.file.documentsDirectory
+                } else {
+                    var pathFile = cordova.file.externalDataDirectory
+                }
+
+                $cordovaFile.writeFile(pathFile, fileName, contentFile, true)
+                    .then(function (success) {
+                        //success
+                    }, function (error) {
+
+                        alert("errore nella creazione del report")
+
+                    });
+                
+
+                    // Display the modal view
+                    vm.modal.show();
+                })
+             
+
+        }
+                                      });
 
         // Clean up the modal view.
         $scope.$on('$destroy', function () {
