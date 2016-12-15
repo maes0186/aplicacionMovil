@@ -31,9 +31,7 @@ $scope.datos = {};
     datos.fCoutaSeguros=AuthService.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100+datos.cuota);
     datos.fEscrituras=AuthService.formatearValoresMoneda(datos.vApartamento*2.5/100);
     datos.fFaltanteIni=AuthService.formatearValoresMoneda(datos.vIniValorInicial-datos.iniAbono);
-    datos.rUsuario='';
-    datos.rAsesor='';
-    datos.rDescripcion='';
+  
    // datos.tasa1=5;
   $scope.datos=datos; 
   };

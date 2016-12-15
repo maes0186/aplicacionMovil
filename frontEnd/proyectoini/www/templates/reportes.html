@@ -22,10 +22,14 @@
 </div>
           <div class="row">
               <div class="col col-50">
-                  <button ng-click="vm.createInvoice()" class="button icon-left  button-positive">Generar reporte</button>
+                  <button ng-click="vm.createInvoice()" class="button icon-left  button-positive"
+                  ng-disabled="!datos.rUsuario||!datos.rAsesor||!datos.rDescripcion"
+                  >Ver Reporte</button>
               </div>
               <div class="col col-50">
-                  <button ng-click="vm.guardarReporte()" class="button icon-left  button-positive">Guardar reporte</button>
+                  <button ng-click="vm.guardarReporte()" class="button icon-left  button-positive"
+                   ng-disabled="!datos.rUsuario||!datos.rAsesor||!datos.rDescripcion"
+                  >Compartir Reporte</button>
               </div>
           </div>
 
