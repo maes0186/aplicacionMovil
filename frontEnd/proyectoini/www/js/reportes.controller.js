@@ -41,11 +41,12 @@
                     $scope.pdfUrl = URL.createObjectURL(blob);
                 
                 var pathFile = "";
-                var fileName = "reporte";
+                var fileName = "reporte.pdf";
                 var contentFile = blob;
                 var rutaCompleta="";
                 var fecha=new Date();
-                fileName=fileName+fecha.getDay()+fecha.getMonth()+fecha.getFullYear()+fecha.getHours()+fecha.getMinutes()+fecha.getSeconds()+".pdf";
+                //AL guardar log de datos del dia genera varios pdf
+                //fileName=fileName+fecha.getDay()+fecha.getMonth()+fecha.getFullYear()+fecha.getHours()+fecha.getMinutes()+fecha.getSeconds()+".pdf";
                 if (ionic.Platform.isIOS()) {
                     var pathFile = cordova.file.documentsDirectory;
                 } else {
@@ -64,7 +65,25 @@
 
               
                    $cordovaSocialSharing
-                        .shareViaEmail("Reporte analisis financiero", "Este es un reporte estimado del analisis del credito para la compra", "maes0186@hotmail.com", null, null, rutaCompleta)
+                        .shareViaEmail(
+                         "Este es un reporte del estimado del análisis financiero el inmueble \n"
+                         +"\n"
+                         +"\n"
+                         +"Valor del apartamento: "+$scope.datos.fVApartamento+"\n"
+                         +"Valor de la tasa de interés: "+$scope.datos.tasa+"% "+"\n"
+                         +"Valor de la cuota: "+$scope.datos.fCuota+"\n"
+                         +"---------------------------------------------"+"\n"
+                         +"Valor del abono: "+$scope.datos.fVAbono+"\n"
+                         +"Valor del apartamento: "+$scope.datos.fVApartamento+"\n"
+                         +"Valor de la cuota inicial: "+$scope.datos.fValorInicial+"\n"
+                         +"Valor faltante de la cuota inicial: "+$scope.datos.fFaltanteIni+"\n"
+                         +"---------------------------------------------"+"\n"
+                         +"Valor del seguro: "+$scope.datos.fSeguros+"\n"
+                         +"Valor de la cuota con seguro: "+$scope.datos.fCoutaSeguros+"\n"
+                         +"Valor de las escrituras: "+$scope.datos.fEscrituras+"\n"
+                         , "Reporte análisis financiero",
+                         
+                         "maes0186@hotmail.com", null, null, rutaCompleta)
                         .then(function(result) {
                      // Success!
                      }, function(err) {
