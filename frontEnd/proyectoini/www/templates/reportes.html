@@ -15,7 +15,7 @@
     <input type="text" placeholder="ASESOR" ng-model="datos.rAsesor">
   </label>
     <label class="item item-input item-floating-label">
-    <span class="input-label">DESCRIPCION</span>
+    <!--<span class="input-label">DESCRIPCION</span>-->
     <input type="text" placeholder="DESCRIPCION" ng-model="datos.rDescripcion">
   </label>
   <br>
@@ -40,6 +40,7 @@
 <script id="pdf-viewer.html" type="text/ng-template">  
     <ion-modal-view>
     <ion-content>
+      
 
       <ng-pdf ng-if="pdfUrl" template-url="templates/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
 

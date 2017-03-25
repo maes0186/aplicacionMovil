@@ -1,14 +1,13 @@
 (function () {
     angular.module('starter').controller('ReportesCtrl', 
-    ['$scope', '$ionicModal', 'InvoiceService','$cordovaFile' ,'$ionicPlatform',ReportesCtrl])
+    ['$scope', '$ionicModal', 'InvoiceService','$cordovaFile' ,'$ionicPlatform','$cordovaSocialSharing',ReportesCtrl])
  
 //.run(function($ionicPlatform,MessagesService) {
    // $ionicPlatform.ready(function() {
 
-    function ReportesCtrl($scope, $ionicModal, InvoiceService,$cordovaFile,$ionicPlatform) {
+    function ReportesCtrl($scope, $ionicModal, InvoiceService,$cordovaFile,$ionicPlatform,$cordovaSocialSharing) {
      //    $ionicPlatform.ready(function() {
         
-
         var vm = this;
 
         setDefaultsForPdfViewer($scope);
@@ -42,13 +41,15 @@
                     $scope.pdfUrl = URL.createObjectURL(blob);
                 
                 var pathFile = "";
-                var fileName = "report.pdf";
+                var fileName = "reporte";
                 var contentFile = blob;
-
+                var rutaCompleta="";
+                var fecha=new Date();
+                fileName=fileName+fecha.getDay()+fecha.getMonth()+fecha.getFullYear()+fecha.getHours()+fecha.getMinutes()+fecha.getSeconds()+".pdf";
                 if (ionic.Platform.isIOS()) {
-                    var pathFile = cordova.file.documentsDirectory
+                    var pathFile = cordova.file.documentsDirectory;
                 } else {
-                    var pathFile = cordova.file.externalDataDirectory
+                    var pathFile = cordova.file.externalApplicationStorageDirectory;
                 }
 
                 $cordovaFile.writeFile(pathFile, fileName, contentFile, true)
@@ -56,13 +57,21 @@
                         //success
                     }, function (error) {
 
-                        alert("errore nella creazione del report")
+                        alert("Error guardando archivo"+error);
 
                     });
-                
+                    rutaCompleta=pathFile+fileName;
 
-                    // Display the modal view
-                    vm.modal.show();
+              
+                   $cordovaSocialSharing
+                        .shareViaEmail("Reporte analisis financiero", "Este es un reporte estimado del analisis del credito para la compra", "maes0186@hotmail.com", null, null, rutaCompleta)
+                        .then(function(result) {
+                     // Success!
+                     }, function(err) {
+                            alert("Error enviando archivo"+err);
+                        });
+
+               
                 })
             }
                 )
