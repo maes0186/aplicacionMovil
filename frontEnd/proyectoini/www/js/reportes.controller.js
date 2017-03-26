@@ -18,17 +18,24 @@
             animation: 'slide-in-up'
         }).then(function (modal) {
             vm.modal = modal;
-        });
+        }, function (error) {
+
+                        alert("error en el template"+error);
+
+                    });
 
         vm.createInvoice = function () {
-
             InvoiceService.createPdf($scope.datos)
                 .then(function (pdf) {
                     var blob = new Blob([pdf], { type: 'application/pdf' });
                     $scope.pdfUrl = URL.createObjectURL(blob);
                     // Display the modal view
                     vm.modal.show();
-                });
+                }, function (error) {
+
+                        alert("Error guardando archivo"+error);
+
+                    });
         };
         //  $ionicPlatform.ready(function(){
       
@@ -66,7 +73,7 @@
               
                    $cordovaSocialSharing
                         .shareViaEmail(
-                         "Este es un reporte del estimado del análisis financiero el inmueble \n"
+                         "Estimado/a "+$scope.datos.rNombre +", este es un reporte  del analisis realizado del estimado de la financiación de su inmueble \n"
                          +"\n"
                          +"\n"
                          +"Valor del apartamento: "+$scope.datos.fVApartamento+"\n"
@@ -83,7 +90,7 @@
                          +"Valor de las escrituras: "+$scope.datos.fEscrituras+"\n"
                          , "Reporte análisis financiero",
                          
-                         "maes0186@hotmail.com", null, null, rutaCompleta)
+                         $scope.datos.rEmail, null, null, rutaCompleta)
                         .then(function(result) {
                      // Success!
                      }, function(err) {
@@ -92,7 +99,11 @@
 
                
                 })
-            }
+            }, function (error) {
+
+                        alert("Error generando archivo: "+error);
+
+                    }
                 )
              
 

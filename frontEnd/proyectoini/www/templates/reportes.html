@@ -7,15 +7,16 @@
       <ion-content ng-controller="ReportesCtrl as vm" class="padding">
          <div class="list">
   <label class="item item-input item-floating-label">
-    <span class="input-label">USUARIO</span>
-    <input type="text" placeholder="USUARIO" ng-model="datos.rUsuario">
+    <span class="input-label">NOMBRE</span>
+    <input type="text" placeholder="NOMBRE" ng-model="datos.rNombre">
   </label>
     <label class="item item-input item-floating-label">
-    <span class="input-label">ASESOR</span>
-    <input type="text" placeholder="ASESOR" ng-model="datos.rAsesor">
+    <span class="input-label">EMAIL</span>
+    <input type="email" placeholder="EMAIL" ng-model="datos.rEmail" required>
+ 
   </label>
     <label class="item item-input item-floating-label">
-    <!--<span class="input-label">DESCRIPCION</span>-->
+    <span class="input-label">DESCRIPCION</span>
     <input type="text" placeholder="DESCRIPCION" ng-model="datos.rDescripcion">
   </label>
   <br>
@@ -23,12 +24,12 @@
           <div class="row">
               <div class="col col-50">
                   <button ng-click="vm.createInvoice()" class="button icon-left ion-eye"
-                  ng-disabled="!datos.rUsuario||!datos.rAsesor||!datos.rDescripcion"
+                  ng-disabled="!datos.rNombre||!datos.rEmail"
                   >Ver</button>
               </div>
               <div class="col col-50">
                   <button ng-click="vm.guardarReporte()" class="button icon-left ion-android-send"
-                   ng-disabled="!datos.rUsuario||!datos.rAsesor||!datos.rDescripcion"
+                   ng-disabled="!datos.rNombre||!datos.rEmail"
                   >Enviar</button>
               </div>
           </div>

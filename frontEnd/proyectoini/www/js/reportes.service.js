@@ -18,19 +18,26 @@
         };
     }
 
+
+    function datoOpcional(dato){
+          if (dato == null){
+            return "";
+        }
+        return dato;
+    }
     function createDocumentDefinition(datos) {
 
 
         var vr = [[],[]];
 vr[0]=[ 
-   'USUARIO',
-   'ASESOR',
+   'NOMBRE',
+   'EMAIL',
    'DESCRIPCION'
 ];
 vr[1]=[ 
-   datos.rUsuario,
-   datos.rAsesor,
-   datos.rDescripcion
+   datos.rNombre,
+   datos.rEmail,
+   datoOpcional(datos.rDescripcion)
 ];
 
 vr[2]=[ 
@@ -38,14 +45,16 @@ vr[2]=[
    'VALOR DEL CREDITO',
    'MESES DEL CREDITO',
    'ABONO AL CREDITO',
-   'TASA DE INTERES (%)'
+   'TASA DE INTERES (%)',
+   'CUOTA'
 ];
 vr[3]=[ 
    datos.fVApartamento,
    datos.valorCredito,
    datos.nMeses.toString(),
    datos.fVAbono,
-   datos.tasa.toString()
+   datos.tasa.toString(),
+   datos.fCuota
 ];
 vr[4]=[ 
    'CUOTA INICIAL (%)',
@@ -91,7 +100,7 @@ var dd = {
       }
     },
     ' ',
-    'DATOS DEL INMBUEBLE',
+    'DATOS DEL INMUEBLE',
     ' ',
     {
       table: {

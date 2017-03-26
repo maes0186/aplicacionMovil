@@ -4,16 +4,16 @@
   
 <div class="tabla">
    <div class="row header">
-          <div class="col text-center">Tasa Anual (%)</div>
-          <div class="col text-center">Cuota ($)</div>
-          <div class="col text-center">Banco o Entidad</div>
+          <div class="col col-50 text-center">Tasa Anual (%)</div>
+          <div class="col col-25 text-center">Cuota ($)</div>
+          <div class="col col-25 text-center">Banco o Entidad</div>
    </div>
 
 <div class="row">
 
 
 
-  <div class="col col-33">
+  <div class="col col-50">
 
 
     
@@ -28,11 +28,11 @@
 
   </div>
   </div>
-  <div class="col col-33 text-center">
+  <div class="col col-25 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa1))}} </h5>
   </div>
   
-<div class="col col-33 text-center">
+<div class="col col-25 text-center">
   <label class="item item-input">
   <input type="text"  class="text-center" placeholder="Banco1" ng-model="datos.banco1" ng-init="datos.banco1='B1'">
 </label>
@@ -41,7 +41,7 @@
    
 
 <div class="row">
-    <div class="col col-33">
+    <div class="col col-50">
         <label class="item item-input">
     <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa2">
     </label>
@@ -49,11 +49,11 @@
     <input type="range"  min="0" max="100"   ng-model="datos.tasa2" ng-change="init()" ng-init="datos.tasa2=12">
   </div>
   </div>
-  <div class="col col-33 text-center">
+  <div class="col col-25 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa2))}} </h5>
 
   </div>
-  <div class="col col-33 text-center">
+  <div class="col col-25 text-center">
      <label class="item item-input">
   <input type="text" class="text-center" placeholder="Banco2" ng-model="datos.banco2" ng-init="datos.banco2='B2'">
 </label>
@@ -62,7 +62,7 @@
 </div>
 
 <div class="row">
-    <div class="col col-33">
+    <div class="col col-50">
         <label class="item item-input">
     <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa3">
     </label>
@@ -70,11 +70,11 @@
     <input type="range"  min="0" max="100"   ng-model="datos.tasa3" ng-change="init()" ng-init="datos.tasa3=11">
   </div>
   </div>
-  <div class="col col-33 text-center">
+  <div class="col col-25 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa3))}} </h5>
 
   </div>
-<div class="col col-33 text-center">
+<div class="col col-25 text-center">
      <label class="item item-input">
   <input type="text" class="text-center" placeholder="Banco3" ng-model="datos.banco3" ng-init="datos.banco3='B3'">
 </label>
@@ -83,7 +83,7 @@
 </div>
 
 <div class="row">
-    <div class="col col-33">
+    <div class="col col-50">
        <label class="item item-input">
     <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa4">
     </label>
@@ -91,10 +91,10 @@
     <input type="range"  min="0" max="100"   ng-model="datos.tasa4" ng-change="init()" ng-init="datos.tasa4=10">
   </div>
   </div>
-  <div class="col col-33 text-center">
+  <div class="col col-25 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4))}} </h5>
   </div>
-  <div class="col col-33 text-center">
+  <div class="col col-25 text-center">
      <label class="item item-input">
   <input type="text" class="text-center" placeholder="Banco4" ng-model="datos.banco4" ng-init="datos.banco4='B4'">
 </label>
