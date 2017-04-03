@@ -1,6 +1,6 @@
 angular.module('starter')
 
-  .service('AuthService', function ($q, $http,VARIABLES_UTILES) {
+  .service('AuthService', function () {
     var formatearValoresMoneda=function (numero) {
        if(isNaN(numero))return '$0';
       return '$'+numero.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");

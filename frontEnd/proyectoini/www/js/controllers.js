@@ -1,9 +1,5 @@
 angular.module('starter')
 
-.controller('AppCtrl', function($scope, $state, $ionicPopup, AuthService,VARIABLES_UTILES) {
-
-
-})
 
 
 .controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
