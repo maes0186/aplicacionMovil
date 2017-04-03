@@ -1,7 +1,3 @@
 angular.module('starter')
-.constant('datos', {
-
-})
+.constant('TIPO','PESOS')
 ;
-
-

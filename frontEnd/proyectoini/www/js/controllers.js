@@ -2,31 +2,31 @@ angular.module('starter')
 
 
 
-.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
 
  $scope.formatearValoresMoneda = function(valor) {
-   return AuthService.formatearValoresMoneda(valor);
+   return calculosFactory.formatearValoresMoneda(valor);
  };
  
 })
 
-.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
 $scope.datos = {};
 
   $scope.calcularValores = function(datos) {
-    datos.cuota=AuthService.calcularCuota(datos,datos.tasa);
-    datos.fCuota=AuthService.formatearValoresMoneda(AuthService.calcularCuota(datos,datos.tasa));
-    datos.valorCredito=AuthService.formatearValoresMoneda(AuthService.obtenerValorCredito(datos));
+    datos.cuota=calculosFactory.calcularCuota(datos,datos.tasa);
+    datos.fCuota=calculosFactory.formatearValoresMoneda(calculosFactory.calcularCuota(datos,datos.tasa));
+    datos.valorCredito=calculosFactory.formatearValoresMoneda(calculosFactory.obtenerValorCredito(datos));
     datos.vIniValorInicial=datos.vApartamento*datos.pCuotaInicial/100;
-    datos.fValorInicial=AuthService.formatearValoresMoneda(datos.vIniValorInicial);
-    datos.fVApartamento=AuthService.formatearValoresMoneda(datos.vApartamento);
-    datos.fVAbono=AuthService.formatearValoresMoneda(datos.vAbono);
-    datos.fIniAbono=AuthService.formatearValoresMoneda(datos.iniAbono);
-    datos.fCuotaInicial=AuthService.formatearValoresMoneda((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses);
-    datos.fSeguros=AuthService.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100);
-    datos.fCoutaSeguros=AuthService.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100+datos.cuota);
-    datos.fEscrituras=AuthService.formatearValoresMoneda(datos.vApartamento*2.5/100);
-    datos.fFaltanteIni=AuthService.formatearValoresMoneda(datos.vIniValorInicial-datos.iniAbono);
+    datos.fValorInicial=calculosFactory.formatearValoresMoneda(datos.vIniValorInicial);
+    datos.fVApartamento=calculosFactory.formatearValoresMoneda(datos.vApartamento);
+    datos.fVAbono=calculosFactory.formatearValoresMoneda(datos.vAbono);
+    datos.fIniAbono=calculosFactory.formatearValoresMoneda(datos.iniAbono);
+    datos.fCuotaInicial=calculosFactory.formatearValoresMoneda((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses);
+    datos.fSeguros=calculosFactory.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100);
+    datos.fCoutaSeguros=calculosFactory.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100+datos.cuota);
+    datos.fEscrituras=calculosFactory.formatearValoresMoneda(datos.vApartamento*2.5/100);
+    datos.fFaltanteIni=calculosFactory.formatearValoresMoneda(datos.vIniValorInicial-datos.iniAbono);
   
    // datos.tasa1=5;
   $scope.datos=datos; 
@@ -35,15 +35,15 @@ $scope.datos = {};
 
 }
 )
-.controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+.controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
 
 })
-.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, AuthService) {
+.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
  $scope.obtenerCuota = function(datos,tasa) {
-   return AuthService.calcularCuota(datos,tasa);
+   return calculosFactory.calcularCuota(datos,tasa);
  };
  $scope.formatearValoresMoneda = function(valor) {
-   return AuthService.formatearValoresMoneda(valor);
+   return calculosFactory.formatearValoresMoneda(valor);
  };
 
 
