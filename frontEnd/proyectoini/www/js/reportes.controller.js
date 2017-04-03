@@ -27,10 +27,12 @@
         vm.createInvoice = function () {
             InvoiceService.createPdf($scope.datos)
                 .then(function (pdf) {
+                     //    ionic.Platform.ready(function(){
                     var blob = new Blob([pdf], { type: 'application/pdf' });
                     $scope.pdfUrl = URL.createObjectURL(blob);
                     // Display the modal view
                     vm.modal.show();
+                        // })
                 }, function (error) {
 
                         alert("Error guardando archivo"+error);
@@ -43,9 +45,9 @@
              
             InvoiceService.createPdf($scope.datos)
                 .then(function (pdf) {
-                    ionic.Platform.ready(function(){
+                  //  ionic.Platform.ready(function(){
                     var blob = new Blob([pdf], { type: 'application/pdf' });
-                    $scope.pdfUrl = URL.createObjectURL(blob);
+         
                 
                 var pathFile = "";
                 var fileName = "reporte.pdf";
@@ -98,7 +100,7 @@
                         });
 
                
-                })
+               // })
             }, function (error) {
 
                         alert("Error generando archivo: "+error);
