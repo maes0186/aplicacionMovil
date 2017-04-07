@@ -2,31 +2,31 @@ angular.module('starter')
 
 
 
-.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
+.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory,UtilesService) {
 
  $scope.formatearValoresMoneda = function(valor) {
-   return calculosFactory.formatearValoresMoneda(valor);
+   return UtilesService.formatearValoresMoneda(valor);
  };
  
 })
 
-.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
+.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory,UtilesService) {
 $scope.datos = {};
 
   $scope.calcularValores = function(datos) {
     datos.cuota=calculosFactory.calcularCuota(datos,datos.tasa);
-    datos.fCuota=calculosFactory.formatearValoresMoneda(calculosFactory.calcularCuota(datos,datos.tasa));
-    datos.valorCredito=calculosFactory.formatearValoresMoneda(calculosFactory.obtenerValorCredito(datos));
+    datos.fCuota=UtilesService.formatearValoresMoneda(calculosFactory.calcularCuota(datos,datos.tasa));
+    datos.valorCredito=UtilesService.formatearValoresMoneda(calculosFactory.obtenerValorCredito(datos));
     datos.vIniValorInicial=datos.vApartamento*datos.pCuotaInicial/100;
-    datos.fValorInicial=calculosFactory.formatearValoresMoneda(datos.vIniValorInicial);
-    datos.fVApartamento=calculosFactory.formatearValoresMoneda(datos.vApartamento);
-    datos.fVAbono=calculosFactory.formatearValoresMoneda(datos.vAbono);
-    datos.fIniAbono=calculosFactory.formatearValoresMoneda(datos.iniAbono);
-    datos.fCuotaInicial=calculosFactory.formatearValoresMoneda((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses);
-    datos.fSeguros=calculosFactory.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100);
-    datos.fCoutaSeguros=calculosFactory.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100+datos.cuota);
-    datos.fEscrituras=calculosFactory.formatearValoresMoneda(datos.vApartamento*2.5/100);
-    datos.fFaltanteIni=calculosFactory.formatearValoresMoneda(datos.vIniValorInicial-datos.iniAbono);
+    datos.fValorInicial=UtilesService.formatearValoresMoneda(datos.vIniValorInicial);
+    datos.fVApartamento=UtilesService.formatearValoresMoneda(datos.vApartamento);
+    datos.fVAbono=UtilesService.formatearValoresMoneda(datos.vAbono);
+    datos.fIniAbono=UtilesService.formatearValoresMoneda(datos.iniAbono);
+    datos.fCuotaInicial=UtilesService.formatearValoresMoneda((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses);
+    datos.fSeguros=UtilesService.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100);
+    datos.fCoutaSeguros=UtilesService.formatearValoresMoneda(((datos.vIniValorInicial-datos.iniAbono)/datos.iniMeses)*2.2/100+datos.cuota);
+    datos.fEscrituras=UtilesService.formatearValoresMoneda(datos.vApartamento*2.5/100);
+    datos.fFaltanteIni=UtilesService.formatearValoresMoneda(datos.vIniValorInicial-datos.iniAbono);
   
    // datos.tasa1=5;
   $scope.datos=datos; 
@@ -38,12 +38,12 @@ $scope.datos = {};
 .controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
 
 })
-.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
+.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory,UtilesService) {
  $scope.obtenerCuota = function(datos,tasa) {
    return calculosFactory.calcularCuota(datos,tasa);
  };
  $scope.formatearValoresMoneda = function(valor) {
-   return calculosFactory.formatearValoresMoneda(valor);
+   return UtilesService.formatearValoresMoneda(valor);
  };
 
 

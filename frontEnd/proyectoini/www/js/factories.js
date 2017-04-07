@@ -6,10 +6,6 @@ angular.module('starter').factory('calculosFactory',['TIPO',function(TIPO) {
  var     obtenerValorCredito=null;
    
   if (TIPO=='PESOS') {
-    var formatearValoresMoneda=function (numero) {
-       if(isNaN(numero))return '$0';
-      return '$'+numero.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-    };
     var calcularCuota=function (datos,tasa) {
       var valorCredito=obtenerValorCredito(datos);
       var i=tasa/1200;
@@ -27,7 +23,6 @@ angular.module('starter').factory('calculosFactory',['TIPO',function(TIPO) {
   }
 
    return {
-      formatearValoresMoneda:formatearValoresMoneda,
       calcularCuota:calcularCuota,
       obtenerValorCredito:obtenerValorCredito
       
