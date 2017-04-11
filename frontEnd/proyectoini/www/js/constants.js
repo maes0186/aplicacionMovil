@@ -1,3 +1,3 @@
 angular.module('starter')
-.constant('TIPO','PESOS')
+.constant('TIPO_CALCULO_CONSTANTE','PESOS')
 ;

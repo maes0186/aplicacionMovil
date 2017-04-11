@@ -2,7 +2,7 @@ angular.module('starter')
 
 
 
-.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory,UtilesService) {
+.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, calculos,UtilesService) {
 
  $scope.formatearValoresMoneda = function(valor) {
    return UtilesService.formatearValoresMoneda(valor);
@@ -10,13 +10,13 @@ angular.module('starter')
  
 })
 
-.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory,UtilesService) {
+.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, calculos,UtilesService) {
 $scope.datos = {};
 
   $scope.calcularValores = function(datos) {
-    datos.cuota=calculosFactory.calcularCuota(datos,datos.tasa);
-    datos.fCuota=UtilesService.formatearValoresMoneda(calculosFactory.calcularCuota(datos,datos.tasa));
-    datos.valorCredito=UtilesService.formatearValoresMoneda(calculosFactory.obtenerValorCredito(datos));
+    datos.cuota=calculos.calcularCuota(datos,datos.tasa);
+    datos.fCuota=UtilesService.formatearValoresMoneda(calculos.calcularCuota(datos,datos.tasa));
+    datos.valorCredito=UtilesService.formatearValoresMoneda(calculos.obtenerValorCredito(datos));
     datos.vIniValorInicial=datos.vApartamento*datos.pCuotaInicial/100;
     datos.fValorInicial=UtilesService.formatearValoresMoneda(datos.vIniValorInicial);
     datos.fVApartamento=UtilesService.formatearValoresMoneda(datos.vApartamento);
@@ -35,12 +35,12 @@ $scope.datos = {};
 
 }
 )
-.controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory) {
+.controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, calculos) {
 
 })
-.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, calculosFactory,UtilesService) {
+.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, calculos,UtilesService) {
  $scope.obtenerCuota = function(datos,tasa) {
-   return calculosFactory.calcularCuota(datos,tasa);
+   return calculos.calcularCuota(datos,tasa);
  };
  $scope.formatearValoresMoneda = function(valor) {
    return UtilesService.formatearValoresMoneda(valor);
