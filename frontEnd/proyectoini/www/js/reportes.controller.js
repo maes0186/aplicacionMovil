@@ -1,11 +1,11 @@
 (function () {
     angular.module('starter').controller('ReportesCtrl', 
-    ['$scope', '$ionicModal', 'InvoiceService','$cordovaFile' ,'$ionicPlatform','$cordovaSocialSharing',ReportesCtrl])
+    ['$scope', '$ionicModal', 'reporteFactory','$cordovaFile' ,'$cordovaSocialSharing',ReportesCtrl])
  
 //.run(function($ionicPlatform,MessagesService) {
    // $ionicPlatform.ready(function() {
 
-    function ReportesCtrl($scope, $ionicModal, InvoiceService,$cordovaFile,$ionicPlatform,$cordovaSocialSharing) {
+    function ReportesCtrl($scope, $ionicModal, reporteFactory,$cordovaFile,$cordovaSocialSharing) {
      //    $ionicPlatform.ready(function() {
         
         var vm = this;
@@ -25,7 +25,7 @@
                     });
 
         vm.createInvoice = function () {
-            InvoiceService.createPdf($scope.datos)
+            reporteFactory.createPdf($scope.datos)
                 .then(function (pdf) {
                      //    ionic.Platform.ready(function(){
                     var blob = new Blob([pdf], { type: 'application/pdf' });
@@ -43,7 +43,7 @@
       
          vm.guardarReporte = function () {
              
-            InvoiceService.createPdf($scope.datos)
+            reporteFactory.createPdf($scope.datos)
                 .then(function (pdf) {
                   //  ionic.Platform.ready(function(){
                     var blob = new Blob([pdf], { type: 'application/pdf' });

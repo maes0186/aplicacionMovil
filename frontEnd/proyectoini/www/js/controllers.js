@@ -2,7 +2,7 @@ angular.module('starter')
 
 
 
-.controller('DashCtrl', function($scope, $state, $http, $ionicPopup, calculos,UtilesService) {
+.controller('DashCtrl', function($scope, calculos,UtilesService) {
 
  $scope.formatearValoresMoneda = function(valor) {
    return UtilesService.formatearValoresMoneda(valor);
@@ -10,7 +10,7 @@ angular.module('starter')
  
 })
 
-.controller('MainCtrl', function($scope, $state, $http, $ionicPopup, calculos,UtilesService) {
+.controller('MainCtrl', function($scope,calculos,UtilesService) {
 $scope.datos = {};
 
   $scope.calcularValores = function(datos) {
@@ -35,10 +35,10 @@ $scope.datos = {};
 
 }
 )
-.controller('CalculosCtrl', function($scope, $state, $http, $ionicPopup, calculos) {
+.controller('CalculosCtrl', function($scope, calculos) {
 
 })
-.controller('CompararCtrl', function($scope, $state, $http, $ionicPopup, calculos,UtilesService) {
+.controller('CompararCtrl', function($scope, calculos,UtilesService) {
  $scope.obtenerCuota = function(datos,tasa) {
    return calculos.calcularCuota(datos,tasa);
  };
