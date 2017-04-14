@@ -1,3 +1,3 @@
-angular.module('starter').config(['calculosProvider','TIPO_CALCULO_CONSTANTE',function(calculosProvider,TIPO_CALCULO_CONSTANTE){
-calculosProvider.setTipoCalculo(TIPO_CALCULO_CONSTANTE);
+angular.module('starter').config(['calculosProvider', 'TIPO_FINANCIACION', function (calculosProvider, TIPO_FINANCIACION) {
+    calculosProvider.setTipoCalculo(TIPO_FINANCIACION.PESOS);
 }]);

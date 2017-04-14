@@ -1,20 +1,19 @@
 <ion-view>
-  <ion-tabs class="tabs-icon-top tabs-positive">
+  <ion-tabs class="tabs-icon-top tabs-positive" >
 
-    <ion-tab title="Datos" icon="ion-clipboard" href="#/main/dash"  ng-selected="calcularValores(datos)">
+    <ion-tab title="Datos" icon="ion-clipboard" href="#/main/dash"  on-select="calcularValores(datos)">
       <ion-nav-view name="dash-tab"></ion-nav-view>
     </ion-tab>
 
-
-
-    <ion-tab title="Calculos" icon="ion-calculator" href="#/main/calculos" ng-selected="calcularValores(datos)">
+    <ion-tab title="Calculos" icon="ion-calculator" href="#/main/calculos" on-select="calcularValores(datos)" >
       <ion-nav-view name="calculos-tab"></ion-nav-view>
     </ion-tab>
 
-     <ion-tab title="Comparar" icon="ion-shuffle" href="#/main/comparar" ng-selected="calcularValores(datos)">
+    <ion-tab title="Comparar" icon="ion-shuffle" href="#/main/comparar"  on-select="calcularValores(datos)">
       <ion-nav-view name="comparar-tab"></ion-nav-view>
     </ion-tab>
-   <ion-tab title="Reportes" icon="ion-android-document" href="#/main/reportes" ng-selected="calcularValores(datos)">
+
+    <ion-tab title="Reportes" icon="ion-android-document" href="#/main/reportes"  on-select="calcularValores(datos)">
       <ion-nav-view name="reportes-tab"></ion-nav-view>
     </ion-tab>
 

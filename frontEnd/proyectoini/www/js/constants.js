@@ -1,3 +1,3 @@
 angular.module('starter')
-.constant('TIPO_CALCULO_CONSTANTE','PESOS')
-;
+.constant('TIPO_FINANCIACION',{PESOS:'PESOS',UVR:'UVR'})
+

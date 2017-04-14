@@ -48,7 +48,7 @@ vr[2]=[
 ];
 vr[3]=[ 
    datos.fVApartamento,
-   datos.valorCredito,
+   datos.fValorCredito,
    datos.nMeses.toString(),
    datos.fVAbono,
    datos.tasa.toString(),
