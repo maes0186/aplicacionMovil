@@ -16,4 +16,8 @@ angular.module('starter')
     $rootScope.$on('$stateChangeStart', function (event, next, nextParams, fromState) {
 
     });
-  });
+  })
+  .run(['$window','$translate',function($window,$translate){
+    var language=($window.navigator.userLanguage||$window.navigator.language).indexOf('en')==0?'en-us':'es-es';
+      $translate.use(language);
+  }])

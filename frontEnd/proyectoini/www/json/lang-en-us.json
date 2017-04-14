@@ -1,0 +1,13 @@
+{
+    "TEXTO": {
+        "NAME": "NAME",
+        "EMAIL": "EMAIL",
+        "DESC": "DESCRIPTION",
+        "VALOR_INMUEBLE": "VALORDELINMUEBLE",
+        "VALOR_CREDITO": "VALORDELCREDITO",
+        "MESES_CREDITO": "MESESDELCREDITO",
+        "ABONO_CREDITO": "ABONOALCREDITO",
+        "TASA_INTERES": "TASADEINTERES(%)",
+        "CUOTA": "CUOTA"
+    }
+}
