@@ -8,7 +8,7 @@ $translateProvider.useStaticFilesLoader({
     prefix: '/json/lang-',
     suffix: '.json'
 });
-
+$translateProvider.useSanitizeValueStrategy(null);
 }]
 
 )

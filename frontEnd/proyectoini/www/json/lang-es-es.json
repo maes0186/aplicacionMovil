@@ -22,5 +22,29 @@
         "OTROS_VALORES":"OTROS_VALORES"
         
 
+    },
+    "DASHBOARD":{
+        "TITULO":"Tu Inversión",
+        "VALOR_FINANCIAMIENTO": "Valores para el financiamiento ",
+        "VALOR_INMUEBLE": "Valor del inmueble",
+        "NUMERO_MESES": "Número de meses",
+        "PORC_CUOTA_INICIAL": "Porcentaje de la cuota inicial (%)",
+        "TASA_INTERES_ANUAL": "Tasa de interés anual (%)",
+        "ABONO_CUOTA_INICIAL": "Abono cuota inicial",
+        "VALORES_CUOTA_INICIAL": "Valores de la cuota inicial" ,
+        "ABONO_CREDITO":"Abono al crédito"
+    },
+    "CALCULOS":{
+        "TITULO": "Cálculos",
+        "CALCULOS_FINANCIAMIENTO": "Calculos de financiamiento",
+"VALOR_CREDITO": "Valor del crédito:",
+"VALOR_CUOTA": "Valor de la cuota:",
+"VALOR_CUOTA_INICIAL": "Valor de la cuota inicial:",
+"VALOR_FALTANTE_CUOTA_INICIAL": "Valor faltante de la cuota inicial:",
+"MESES": "Meses:",
+"CUOTA_MENSUAL": "Cuota Mensual:",
+"VALOR_ESTIMADO_ESCRITURAS": "Valor estimado de las escrituras:",
+"VALOR_SEGURO": "Valor estimado del seguro:",
+"VALOR_CON_SEGURO": "Valor cuota con seguro:"
     }
 }

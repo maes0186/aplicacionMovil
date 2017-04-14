@@ -1,65 +1,68 @@
-<ion-view view-title="Tu Inversión" name="dashboard-view">
+<ion-view view-title="{{ 'DASHBOARD.TITULO' | translate }}" name="dashboard-view">
 
 
   <ion-content class="padding">
-    <div class="row"><div class="col text-center">
-<div class="list">
-  <div class="item item-divider">
-    Valores para el financiamiento
-  </div>
-  <label class="item item-input item-floating-label">
+    <div class="row">
+      <div class="col text-center">
+        <div class="list">
+          <div class="item item-divider">
+            {{ 'DASHBOARD.VALOR_FINANCIAMIENTO' | translate }}
+          </div>
+          <label class="item item-input item-floating-label">
     
-     <span class="input-label">Valor del Inmueble</span>
+     <span class="input-label">{{ 'DASHBOARD.VALOR_INMUEBLE' | translate }}</span>
      <label class="item item-input">
-    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="Valor del apartamento" ng-init="datos.vApartamento=0" />
+    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="{{ 'DASHBOARD.VALOR_INMUEBLE' | translate }}" ng-init="datos.vApartamento=0" />
      </label>
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Numero de meses</span>
+          </label>
+          <label class="item item-input item-floating-label">
+    <span class="input-label">{{ 'DASHBOARD.NUMERO_MESES' | translate }}</span>
     <label class="item item-input">
-      <input type="number" placeholder="Numero de meses" ng-model="datos.nMeses" ng-init="datos.nMeses=180">
+      <input type="number" placeholder="{{ 'DASHBOARD.NUMERO_MESES' | translate }}" ng-model="datos.nMeses" ng-init="datos.nMeses=180">
     </label>
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">Porcentaje de la cuota inicial (%)</span>
+          </label>
+          <label class="item item-input item-floating-label">
+    <span class="input-label">{{ 'DASHBOARD.PORC_CUOTA_INICIAL' | translate }}</span>
     <label class="item item-input">
-    <input type="number" placeholder="Porcentaje de la cuota inicial (%)" ng-model="datos.pCuotaInicial" ng-init="datos.pCuotaInicial=30">
+    <input type="number" placeholder="{{ 'DASHBOARD.PORC_CUOTA_INICIAL' | translate }}" ng-model="datos.pCuotaInicial" ng-init="datos.pCuotaInicial=30">
     </label>
-  </label>
-   <label class="item item-input item-floating-label">
-    <span class="input-label">Tasa de interés (%)</span>
+          </label>
+          <label class="item item-input item-floating-label">
+    <span class="input-label">{{ 'DASHBOARD.TASA_INTERES_ANUAL' | translate }}</span>
     <label class="item item-input">
-    <input type="number" placeholder="Tasa de interés anual (%)" ng-model="datos.tasa" ng-init="datos.tasa=12">
+    <input type="number" placeholder="{{ 'DASHBOARD.TASA_INTERES_ANUAL' | translate }}" ng-model="datos.tasa" ng-init="datos.tasa=12">
     </label>
-  </label>
-<label class="item item-input item-floating-label">
-    <span class="input-label">Abono al credito</span>
+          </label>
+          <label class="item item-input item-floating-label">
+    <span class="input-label">{{ 'DASHBOARD.ABONO_CREDITO' | translate }}</span>
     <label class="item item-input">
-    <input type="text" ng-input-currency placeholder="Abono cuota inicial" ng-model="datos.vAbono" ng-init="datos.vAbono=0">
+    <input type="text" ng-input-currency placeholder="{{ 'DASHBOARD.ABONO_CREDITO' | translate }}" ng-model="datos.vAbono" ng-init="datos.vAbono=0">
     </label>
-  </label>
-  
-
-  <div class="item item-divider">
-    Valores de la cuota inicial 
-  </div>
-  <div class="item item-divider">
-    {{formatearValoresMoneda(datos.vApartamento*datos.pCuotaInicial/100)}}
-  </div>
-   <label class="item item-input item-floating-label">
-     <span class="input-label">Número de meses</span>
-    <label class="item item-input">
-    <input type="text"  ng-model="datos.iniMeses" placeholder="Número de meses" ng-init="datos.iniMeses=12" />
-    </label>
-  </label>
-   <label class="item item-input item-floating-label">
-     <span class="input-label">Abono a la cuota inicial</span>
-    <label class="item item-input">
-    <input type="text"  ng-input-currency ng-model="datos.iniAbono" placeholder="Abono a la cuota inicial" ng-init="datos.iniAbono=0" />
-    </label>
-</div>
+          </label>
 
 
-    </div></div>
+          <div class="item item-divider">
+            {{ 'DASHBOARD.VALORES_CUOTA_INICIAL' | translate }}
+          </div>
+          <div class="item item-divider">
+            {{formatearValoresMoneda(datos.vApartamento*datos.pCuotaInicial/100)}}
+          </div>
+          <label class="item item-input item-floating-label">
+     <span class="input-label">{{ 'DASHBOARD.NUMERO_MESES' | translate }}</span>
+    <label class="item item-input">
+    <input type="text"  ng-model="datos.iniMeses" placeholder="{{ 'DASHBOARD.NUMERO_MESES' | translate }}" ng-init="datos.iniMeses=12" />
+    </label>
+          </label>
+          <label class="item item-input item-floating-label">
+     <span class="input-label">
+{{ 'DASHBOARD.ABONO_CUOTA_INICIAL' | translate }}
+     </span>
+    <label class="item item-input">
+    <input type="text"  ng-input-currency ng-model="datos.iniAbono" placeholder="{{ 'DASHBOARD.ABONO_CUOTA_INICIAL' | translate }}" ng-init="datos.iniAbono=0" />
+    </label>
+        </div>
+
+      </div>
+    </div>
   </ion-content>
 </ion-view>

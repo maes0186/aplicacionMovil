@@ -1,12 +1,12 @@
-<ion-view view-title="Cálculos" name="dashboard-view">
+<ion-view view-title="{{ 'CALCULOS.TITULO' | translate }}" name="dashboard-view">
   <ion-content class="padding">
     <div class="list">
    <div class="item item-divider">
-   Calculos de financiamiento
+   {{ 'CALCULOS.CALCULOS_FINANCIAMIENTO' | translate }}
   </div>
      <div class="row">
   <div class="col">
-     <h5 class="title">Valor del crédito: </h5>
+     <h5 class="title"> {{ 'CALCULOS.VALOR_CREDITO' | translate }} </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fValorCredito}}</h5>
@@ -15,7 +15,7 @@
 
 <div class="row">
   <div class="col">
-     <h5 class="title">Valor de la cuota: </h5>
+     <h5 class="title">{{ 'CALCULOS.VALOR_CUOTA' | translate }}  </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fCuota}}</h5>
@@ -27,7 +27,7 @@
 
 <div class="row">
   <div class="col">
-     <h5 class="title">Valor de la cuota inicial: </h5>
+     <h5 class="title">{{ 'CALCULOS.VALOR_CUOTA_INICIAL' | translate }}  </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fValorInicial}}</h5>
@@ -35,7 +35,7 @@
 </div>
 <div class="row">
   <div class="col">
-     <h5 class="title">Valor faltante de la cuota inicial: </h5>
+     <h5 class="title">{{ 'CALCULOS.VALOR_FALTANTE_CUOTA_INICIAL' | translate }}  </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fFaltanteIni}}</h5>
@@ -44,7 +44,7 @@
 
 <div class="row">
   <div class="col">
-     <h5 class="title">Meses: </h5>
+     <h5 class="title">{{ 'CALCULOS.MESES' | translate }} </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.iniMeses}}</h5>
@@ -52,7 +52,7 @@
 </div>
 <div class="row">
   <div class="col">
-     <h5 class="title">Cuota Mensual: </h5>
+     <h5 class="title">{{ 'CALCULOS.CUOTA_MENSUAL' | translate }}  </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fCuotaInicial}}</h5>
@@ -63,7 +63,7 @@
   </div>
 <div class="row">
   <div class="col">
-     <h5 class="title">Valor estimado de las escrituras: </h5>
+     <h5 class="title">{{ 'CALCULOS.VALOR_ESTIMADO_ESCRITURAS' | translate }}  </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fEscrituras}}</h5>
@@ -71,7 +71,7 @@
 </div>
 <div class="row">
   <div class="col">
-     <h5 class="title">Valor estimado del seguro: </h5>
+     <h5 class="title">{{ 'CALCULOS.VALOR_SEGURO' | translate }} </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fSeguros}}</h5>
@@ -79,7 +79,7 @@
 </div>
 <div class="row">
   <div class="col">
-     <h5 class="title">Valor cuota con seguro: </h5>
+     <h5 class="title">{{ 'CALCULOS.VALOR_CON_SEGURO' | translate }}  </h5>
   </div>
   <div class="col">
      <h5 class="title">{{datos.fCoutaSeguros}}</h5>
