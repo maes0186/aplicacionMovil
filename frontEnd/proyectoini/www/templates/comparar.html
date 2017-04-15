@@ -1,12 +1,12 @@
-<ion-view view-title="Comparaciones" name="dashboard-view">
+<ion-view view-title="{{ 'COMPARAR.TITULO' | translate }}" name="dashboard-view">
   <ion-content class="padding">
     <div class="list">
   
 <div class="tabla">
    <div class="row header">
-          <div class="col col-50 text-center">Tasa Anual (%)</div>
-          <div class="col col-25 text-center">Cuota ($)</div>
-          <div class="col col-25 text-center">Banco o Entidad</div>
+          <div class="col col-50 text-center">{{ 'COMPARAR.TASA_ANUAL' | translate }}</div>
+          <div class="col col-25 text-center">{{ 'COMPARAR.CUOTA' | translate }}</div>
+          <div class="col col-25 text-center">{{ 'COMPARAR.BANCO_ENTIDAD' | translate }}</div>
    </div>
 
 <div class="row">
@@ -18,7 +18,7 @@
 
     
   <label class="item item-input">
-    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa1">
+    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa1">
     </label>
 
     <div class="item range range-positive">
@@ -34,7 +34,7 @@
   
 <div class="col col-25 text-center">
   <label class="item item-input">
-  <input type="text"  class="text-center" placeholder="Banco1" ng-model="datos.banco1" ng-init="datos.banco1='B1'">
+  <input type="text"  class="text-center" placeholder="{{ 'COMPARAR.BANCO1' | translate }}" ng-model="datos.banco1" ng-init="datos.banco1='B1'">
 </label>
   </div>
 </div>
@@ -43,7 +43,7 @@
 <div class="row">
     <div class="col col-50">
         <label class="item item-input">
-    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa2">
+    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa2">
     </label>
     <div class="item range range-positive">
     <input type="range"  min="0" max="100"   ng-model="datos.tasa2" ng-change="init()" ng-init="datos.tasa2=12">
@@ -55,7 +55,7 @@
   </div>
   <div class="col col-25 text-center">
      <label class="item item-input">
-  <input type="text" class="text-center" placeholder="Banco2" ng-model="datos.banco2" ng-init="datos.banco2='B2'">
+  <input type="text" class="text-center" placeholder="{{ 'COMPARAR.BANCO2' | translate }}" ng-model="datos.banco2" ng-init="datos.banco2='B2'">
 </label>
   </div>
 
@@ -64,7 +64,7 @@
 <div class="row">
     <div class="col col-50">
         <label class="item item-input">
-    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa3">
+    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa3">
     </label>
     <div class="item range range-positive">
     <input type="range"  min="0" max="100"   ng-model="datos.tasa3" ng-change="init()" ng-init="datos.tasa3=11">
@@ -76,7 +76,7 @@
   </div>
 <div class="col col-25 text-center">
      <label class="item item-input">
-  <input type="text" class="text-center" placeholder="Banco3" ng-model="datos.banco3" ng-init="datos.banco3='B3'">
+  <input type="text" class="text-center" placeholder="{{ 'COMPARAR.BANCO3' | translate }}" ng-model="datos.banco3" ng-init="datos.banco3='B3'">
 </label>
   </div>
 
@@ -85,7 +85,7 @@
 <div class="row">
     <div class="col col-50">
        <label class="item item-input">
-    <input class="text-center" type="text" placeholder="Tasa" ng-model="datos.tasa4">
+    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa4">
     </label>
     <div class="item range range-positive">
     <input type="range"  min="0" max="100"   ng-model="datos.tasa4" ng-change="init()" ng-init="datos.tasa4=10">
@@ -96,14 +96,14 @@
   </div>
   <div class="col col-25 text-center">
      <label class="item item-input">
-  <input type="text" class="text-center" placeholder="Banco4" ng-model="datos.banco4" ng-init="datos.banco4='B4'">
+  <input type="text" class="text-center" placeholder="{{ 'COMPARAR.BANCO4' | translate }}" ng-model="datos.banco4" ng-init="datos.banco4='B4'">
 </label>
   </div>
 </div>
  </div>
 <div class="item item-divider">
   <div class="col text-center">
-  COMPARACIONES ENTRE TASAS
+  {{ 'COMPARAR.COMPARACION_TASAS' | translate }}
   </div>
   </div>
 <div class="tabla">

@@ -1,5 +1,6 @@
 {
     "REPORT": {
+        "TITULO": "Reportes",
         "NAME": "NOMBRE",
         "EMAIL": "EMAIL",
         "DESC": "DESCRIPCION",
@@ -16,35 +17,53 @@
         "VAL_EST_ESCRITURAS": "VALOR ESTIMADO DE LAS ESCRITURAS",
         "VAL_EST_SEGURO": "VALOR ESTIMADO DEL SEGURO",
         "VAL_CUOTA_SEGURO": "VALOR DE LA CUOTA CON SEGURO",
-        "DATOS_BASICOS":"DATOS BASICOS",
-        "DATOS_INMUEBLE":"DATOS DEL INMUEBLE",
-        "DATOS_CUOTA_INICIAL":"DATOS DE LA CUOTA INCIAL",
-        "OTROS_VALORES":"OTROS_VALORES"
-        
-
+        "DATOS_BASICOS": "DATOS BASICOS",
+        "DATOS_INMUEBLE": "DATOS DEL INMUEBLE",
+        "DATOS_CUOTA_INICIAL": "DATOS DE LA CUOTA INCIAL",
+        "OTROS_VALORES": "OTROS_VALORES",
+        "VER": "Ver",
+        "ENVIAR": "Enviar"
     },
-    "DASHBOARD":{
-        "TITULO":"Tu Inversión",
+    "DASHBOARD": {
+        "TITULO": "Tu Inversión",
         "VALOR_FINANCIAMIENTO": "Valores para el financiamiento ",
         "VALOR_INMUEBLE": "Valor del inmueble",
         "NUMERO_MESES": "Número de meses",
         "PORC_CUOTA_INICIAL": "Porcentaje de la cuota inicial (%)",
         "TASA_INTERES_ANUAL": "Tasa de interés anual (%)",
         "ABONO_CUOTA_INICIAL": "Abono cuota inicial",
-        "VALORES_CUOTA_INICIAL": "Valores de la cuota inicial" ,
-        "ABONO_CREDITO":"Abono al crédito"
+        "VALORES_CUOTA_INICIAL": "Valores de la cuota inicial",
+        "ABONO_CREDITO": "Abono al crédito"
     },
-    "CALCULOS":{
+    "CALCULOS": {
         "TITULO": "Cálculos",
         "CALCULOS_FINANCIAMIENTO": "Calculos de financiamiento",
-"VALOR_CREDITO": "Valor del crédito:",
-"VALOR_CUOTA": "Valor de la cuota:",
-"VALOR_CUOTA_INICIAL": "Valor de la cuota inicial:",
-"VALOR_FALTANTE_CUOTA_INICIAL": "Valor faltante de la cuota inicial:",
-"MESES": "Meses:",
-"CUOTA_MENSUAL": "Cuota Mensual:",
-"VALOR_ESTIMADO_ESCRITURAS": "Valor estimado de las escrituras:",
-"VALOR_SEGURO": "Valor estimado del seguro:",
-"VALOR_CON_SEGURO": "Valor cuota con seguro:"
+        "VALOR_CREDITO": "Valor del crédito:",
+        "VALOR_CUOTA": "Valor de la cuota:",
+        "VALOR_CUOTA_INICIAL": "Valor de la cuota inicial:",
+        "VALOR_FALTANTE_CUOTA_INICIAL": "Valor faltante de la cuota inicial:",
+        "MESES": "Meses:",
+        "CUOTA_MENSUAL": "Cuota Mensual:",
+        "VALOR_ESTIMADO_ESCRITURAS": "Valor estimado de las escrituras:",
+        "VALOR_SEGURO": "Valor estimado del seguro:",
+        "VALOR_CON_SEGURO": "Valor cuota con seguro:"
+    },
+    "COMPARAR": {
+        "TITULO": "Comparaciones",
+        "TASA_ANUAL": "Tasa Anual (%)",
+        "CUOTA": "Cuota ($)",
+        "BANCO_ENTIDAD": "Banco o Entidad",
+        "TASA": "Tasa",
+        "BANCO1": "Banco1",
+        "BANCO2": "Banco2",
+        "BANCO3": "Banco3",
+        "BANCO4": "Banco4",
+        "COMPARACION_TASAS": "COMPARACIONES ENTRE TASAS"
+    },
+    "MAIN":{
+        "DATOS":"Datos",
+        "CALCULOS":"Cálculos",
+        "COMPARAR":"Comparar",
+        "REPORTES":"Reportes"
     }
 }

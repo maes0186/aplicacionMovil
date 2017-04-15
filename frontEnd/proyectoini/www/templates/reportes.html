@@ -1,23 +1,20 @@
-<ion-view view-title="Reportes" name="dashboard-view">
+<ion-view view-title="{{ 'REPORT.TITULO' | translate }}" name="dashboard-view">
   <body ng-app="starter">  
     <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">PDF Tutorial</h1>
-      </ion-header-bar>
       <ion-content ng-controller="ReportesCtrl as vm" class="padding">
          <div class="list">
   <label class="item item-input item-floating-label">
-    <span class="input-label">NOMBRE</span>
-    <input type="text" placeholder="NOMBRE" ng-model="datos.rNombre">
+    <span class="input-label">{{ 'REPORT.NAME' | translate }}</span>
+    <input type="text" placeholder="{{ 'REPORT.NAME' | translate }}" ng-model="datos.rNombre">
   </label>
     <label class="item item-input item-floating-label">
-    <span class="input-label">EMAIL</span>
-    <input type="email" placeholder="EMAIL" ng-model="datos.rEmail" required>
+    <span class="input-label">{{ 'REPORT.EMAIL' | translate }}</span>
+    <input type="email" placeholder="{{ 'REPORT.EMAIL' | translate }}" ng-model="datos.rEmail" required>
  
   </label>
     <label class="item item-input item-floating-label">
-    <span class="input-label">DESCRIPCION</span>
-    <input type="text" placeholder="DESCRIPCION" ng-model="datos.rDescripcion">
+    <span class="input-label">{{ 'REPORT.DESC' | translate }}</span>
+    <input type="text" placeholder="{{ 'REPORT.DESC' | translate }}" ng-model="datos.rDescripcion">
   </label>
   <br>
 </div>
@@ -25,12 +22,12 @@
               <div class="col col-50">
                   <button ng-click="vm.createInvoice()" class="button icon-left ion-eye"
                   ng-disabled="!datos.rNombre||!datos.rEmail"
-                  >Ver</button>
+                  >{{ 'REPORT.VER' | translate }}</button>
               </div>
               <div class="col col-50">
                   <button ng-click="vm.guardarReporte()" class="button icon-left ion-android-send"
                    ng-disabled="!datos.rNombre||!datos.rEmail"
-                  >Enviar</button>
+                  >{{ 'REPORT.ENVIAR' | translate }}</button>
               </div>
           </div>
 
