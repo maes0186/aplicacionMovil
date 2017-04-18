@@ -7,7 +7,6 @@
     "angular-md5": "^0.1.10",
     "angular-pdf": "^1.5.1",
     "angular-translate": "^2.15.1",
-    "angular-socialshare": "^1.4.5",
     "angular-translate-loader-static-files": "^2.15.1",
     "ng-input-currency": "^0.9.7",
     "pdfmake": "^0.1.27"
