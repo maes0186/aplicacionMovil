@@ -5,7 +5,7 @@ angular.module('starter').config(['calculosProvider', 'TIPO_FINANCIACION', funct
 ['$translateProvider',function($translateProvider){
 
 $translateProvider.useStaticFilesLoader({
-    prefix: '/json/lang-',
+    prefix: 'json/lang-',
     suffix: '.json'
 });
 $translateProvider.useSanitizeValueStrategy(null);

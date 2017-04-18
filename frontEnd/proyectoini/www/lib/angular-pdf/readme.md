@@ -1,6 +1,6 @@
 # angular-pdf [![Build Status](https://travis-ci.org/sayanee/angularjs-pdf.svg)](https://travis-ci.org/sayanee/angularjs-pdf) [![Dependency Status](https://gemnasium.com/sayanee/angularjs-pdf.svg)](https://gemnasium.com/sayanee/angularjs-pdf)
 
-Version: 1.3.0
+Version: 1.5.1
 
 >An [AngularJS](http://angularjs.org/) [directive](http://docs.angularjs.org/guide/directive) `ng-pdf` to display PDF files with [PDFJS](http://mozilla.github.io/pdf.js/).
 
@@ -30,6 +30,7 @@ Check [`bower.json` file](https://github.com/sayanee/angularjs-pdf/blob/master/b
 - handles error
 - show loading of pdf
 - show progress percentage of loading pdf
+- insert password for protected PDFs
 - dynamically change the pdf url
 - support retina canvas
 - set authorization or http headers
@@ -207,6 +208,19 @@ $scope.onProgress = function(progress) {
 }
 ```
 
+### Managing password requests
+
+In the controller, you can use the function `scope.onPassword`. This function is called when the PDF require an opening password.
+
+```js
+$scope.onPassword = function (updatePasswordFn, passwordResponse) {
+  // if passwordResponse === PDFJS.PasswordResponses.NEED_PASSWORD
+  // you can provide the password calling updatePasswordFn('THE_PASSWORD')
+  // else if passwordResponse === PDFJS.PasswordResponses.INCORRECT_PASSWORD
+  // provided password is not correct
+};
+```
+
 ## Variations
 
 1. If using with [Angular UI modal](http://angular-ui.github.io/bootstrap/#/modal), `pageNum` attribute is no longer required. [Checkout the implementation](https://github.com/sayanee/angularjs-pdf/issues/12)
@@ -236,17 +250,17 @@ This repository follows the [Semantic Versioning](http://semver.org/) guidelines
 1. For **patches**, run the command:
 
 	```
-	grunt bump
+	grunt bumps
 	```
 - For **minor release**, run the command:
 
 	```
-	grunt bump:minor
+	grunt bumps --type=minor
 	```
 - For **major release**, run the command:
 
 	```
-	grunt bump:major
+	grunt bumps --type=major
 	```
 
 ## License

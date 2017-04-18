@@ -65,5 +65,12 @@
         "CALCULOS":"Cálculos",
         "COMPARAR":"Comparar",
         "REPORTES":"Reportes"
-    }
+    },
+
+"VALID":{
+    "VACIO":"El campo no debe ser vacio",
+    "MIN":"Este campo esta demasiado corto",
+    "MAX":"El campo no tiene el maximo de longitud",
+    "EMAIL":"La sintaxis del correo no es valida"
+}
 }

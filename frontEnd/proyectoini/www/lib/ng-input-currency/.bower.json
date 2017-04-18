@@ -21,12 +21,12 @@
     "test",
     "tests"
   ],
-  "version": "0.9.4",
-  "_release": "0.9.4",
+  "version": "0.9.7",
+  "_release": "0.9.7",
   "_resolution": {
     "type": "version",
-    "tag": "v0.9.4",
-    "commit": "d26a6a562094041218e030448e14f3478d1089df"
+    "tag": "v0.9.7",
+    "commit": "485976770569edfbb98f20dd24be99fea5c5e16c"
   },
   "_source": "https://github.com/jstroem/ng-input-currency.git",
   "_target": "^0.9.4",

@@ -1,45 +1,50 @@
 <ion-view view-title="{{ 'REPORT.TITULO' | translate }}" name="dashboard-view">
-  <body ng-app="starter">  
-    <ion-pane>
-      <ion-content ng-controller="ReportesCtrl as vm" class="padding">
-         <div class="list">
-  <label class="item item-input item-floating-label">
+    <form ng-app="starter" name="formReporte">
+        <ion-pane>
+            <ion-content ng-controller="ReportesCtrl as vm" class="padding">
+
+                <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'REPORT.NAME' | translate }}</span>
-    <input type="text" placeholder="{{ 'REPORT.NAME' | translate }}" ng-model="datos.rNombre">
+    <input type="text" name="iNombre" placeholder="{{ 'REPORT.NAME' | translate }}" ng-model="datos.rNombre" required>
   </label>
-    <label class="item item-input item-floating-label">
+       
+                <div ng-messages="formReporte.iNombre.$error" style="color:maroon" role="alert" ng-if='formReporte.iNombre.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
+
+                <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'REPORT.EMAIL' | translate }}</span>
-    <input type="email" placeholder="{{ 'REPORT.EMAIL' | translate }}" ng-model="datos.rEmail" required>
+    <input name="iEmail"type="email" placeholder="{{ 'REPORT.EMAIL' | translate }}" ng-model="datos.rEmail" required>
  
   </label>
-    <label class="item item-input item-floating-label">
+
+    <div ng-messages="formReporte.iEmail.$error" style="color:maroon" role="alert" ng-if='formReporte.iEmail.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
+
+                <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'REPORT.DESC' | translate }}</span>
     <input type="text" placeholder="{{ 'REPORT.DESC' | translate }}" ng-model="datos.rDescripcion">
   </label>
-  <br>
-</div>
-          <div class="row">
-              <div class="col col-50">
-                  <button ng-click="vm.createInvoice()" class="button icon-left ion-eye"
-                  ng-disabled="!datos.rNombre||!datos.rEmail"
-                  >{{ 'REPORT.VER' | translate }}</button>
-              </div>
-              <div class="col col-50">
-                  <button ng-click="vm.guardarReporte()" class="button icon-left ion-android-send"
-                   ng-disabled="!datos.rNombre||!datos.rEmail"
-                  >{{ 'REPORT.ENVIAR' | translate }}</button>
-              </div>
-          </div>
+                <br>
 
-      </ion-content>
-    </ion-pane>
-</body>  
+                <div class="row">
+                    <div class="col col-50">
+                        <button ng-click="vm.createInvoice()" class="button icon-left ion-eye" ng-disabled="!datos.rNombre||!datos.rEmail">{{ 'REPORT.VER' | translate }}</button>
+                    </div>
+                    <div class="col col-50">
+                        <button ng-click="vm.guardarReporte()" class="button icon-left ion-android-send" ng-disabled="!datos.rNombre||!datos.rEmail">{{ 'REPORT.ENVIAR' | translate }}</button>
+                    </div>
+                </div>
 
-<script id="pdf-viewer.html" type="text/ng-template">  
+            </ion-content>
+        </ion-pane>
+    </form>
+    <script id="pdf-viewer.html" type="text/ng-template">  
     <ion-modal-view>
     <ion-content>
       
-
+<div>
       <ng-pdf ng-if="pdfUrl" template-url="templates/viewer.html" canvasid="pdf" scale="page-fit"></ng-pdf>  
 
 
