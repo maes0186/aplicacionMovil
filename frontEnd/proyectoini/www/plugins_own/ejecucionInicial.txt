@@ -1,3 +1,0 @@
-cordova plugin add cordova-plugin-x-socialsharing
-cordova plugin add cordova-plugin-file
-cordova prepare
