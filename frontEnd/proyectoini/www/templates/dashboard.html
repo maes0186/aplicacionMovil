@@ -1,6 +1,6 @@
 <ion-view view-title="{{ 'DASHBOARD.TITULO' | translate }}" name="dashboard-view">
 
-
+<form name="formDashBoard">
   <ion-content class="padding">
     <div class="row">
       <div class="col text-center">
@@ -12,34 +12,52 @@
     
      <span class="input-label">{{ 'DASHBOARD.VALOR_INMUEBLE' | translate }}</span>
      <label class="item item-input">
-    <input type="text"  ng-input-currency ng-model="datos.vApartamento" placeholder="{{ 'DASHBOARD.VALOR_INMUEBLE' | translate }}" ng-init="datos.vApartamento=0" />
+    <input type="text" name="iDvApartamento"  ng-pattern="/^[0-9]*$/" ng-input-currency ng-model="datos.vApartamento" placeholder="{{ 'DASHBOARD.VALOR_INMUEBLE' | translate }}" ng-init="datos.vApartamento=0" required />
+     
      </label>
           </label>
+      
+           <div ng-messages="formDashBoard.iDvApartamento.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDvApartamento.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
           <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'DASHBOARD.NUMERO_MESES' | translate }}</span>
     <label class="item item-input">
-      <input type="number" placeholder="{{ 'DASHBOARD.NUMERO_MESES' | translate }}" ng-model="datos.nMeses" ng-init="datos.nMeses=180">
+      <input name="iDvNmeses" type="number" placeholder="{{ 'DASHBOARD.NUMERO_MESES' | translate }}" ng-model="datos.nMeses" ng-init="datos.nMeses=180" required>
     </label>
           </label>
+             <div ng-messages="formDashBoard.iDvNmeses.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDvNmeses.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
           <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'DASHBOARD.PORC_CUOTA_INICIAL' | translate }}</span>
     <label class="item item-input">
-    <input type="number" placeholder="{{ 'DASHBOARD.PORC_CUOTA_INICIAL' | translate }}" ng-model="datos.pCuotaInicial" ng-init="datos.pCuotaInicial=30">
+    <input name="iDpCuotaIn" type="number" placeholder="{{ 'DASHBOARD.PORC_CUOTA_INICIAL' | translate }}" ng-model="datos.pCuotaInicial" ng-init="datos.pCuotaInicial=30" required>
     </label>
           </label>
+           <div ng-messages="formDashBoard.iDpCuotaIn.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDpCuotaIn.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
           <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'DASHBOARD.TASA_INTERES_ANUAL' | translate }}</span>
     <label class="item item-input">
-    <input type="number" placeholder="{{ 'DASHBOARD.TASA_INTERES_ANUAL' | translate }}" ng-model="datos.tasa" ng-init="datos.tasa=12">
+    <input name="iDTasa" type="number" placeholder="{{ 'DASHBOARD.TASA_INTERES_ANUAL' | translate }}" ng-model="datos.tasa" ng-init="datos.tasa=12" required>
     </label>
           </label>
+           <div ng-messages="formDashBoard.iDTasa.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDTasa.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
           <label class="item item-input item-floating-label">
     <span class="input-label">{{ 'DASHBOARD.ABONO_CREDITO' | translate }}</span>
     <label class="item item-input">
-    <input type="text" ng-input-currency placeholder="{{ 'DASHBOARD.ABONO_CREDITO' | translate }}" ng-model="datos.vAbono" ng-init="datos.vAbono=0">
+    <input name="iDvAbonoC" type="text" ng-input-currency placeholder="{{ 'DASHBOARD.ABONO_CREDITO' | translate }}" ng-model="datos.vAbono" ng-init="datos.vAbono=0" required>
     </label>
           </label>
+          
 
+<div ng-messages="formDashBoard.iDvAbonoC.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDvAbonoC.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
 
           <div class="item item-divider">
             {{ 'DASHBOARD.VALORES_CUOTA_INICIAL' | translate }}
@@ -50,19 +68,28 @@
           <label class="item item-input item-floating-label">
      <span class="input-label">{{ 'DASHBOARD.NUMERO_MESES' | translate }}</span>
     <label class="item item-input">
-    <input type="text"  ng-model="datos.iniMeses" placeholder="{{ 'DASHBOARD.NUMERO_MESES' | translate }}" ng-init="datos.iniMeses=12" />
+    <input name="iDMesesIni" type="number"  ng-model="datos.iniMeses" placeholder="{{ 'DASHBOARD.NUMERO_MESES' | translate }}" ng-init="datos.iniMeses=12" required/>
     </label>
           </label>
+          <div ng-messages="formDashBoard.iDMesesIni.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDMesesIni.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
+
           <label class="item item-input item-floating-label">
      <span class="input-label">
 {{ 'DASHBOARD.ABONO_CUOTA_INICIAL' | translate }}
      </span>
     <label class="item item-input">
-    <input type="text"  ng-input-currency ng-model="datos.iniAbono" placeholder="{{ 'DASHBOARD.ABONO_CUOTA_INICIAL' | translate }}" ng-init="datos.iniAbono=0" />
+    <input name="iDvAbonoCi" type="text"  ng-input-currency ng-model="datos.iniAbono" placeholder="{{ 'DASHBOARD.ABONO_CUOTA_INICIAL' | translate }}" ng-init="datos.iniAbono=0" required />
     </label>
+          </label>
+          <div ng-messages="formDashBoard.iDvAbonoCi.$error" style="color:maroon" role="alert" ng-if='formDashBoard.iDvAbonoCi.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+                </div>
         </div>
 
       </div>
     </div>
   </ion-content>
+</form>
 </ion-view>

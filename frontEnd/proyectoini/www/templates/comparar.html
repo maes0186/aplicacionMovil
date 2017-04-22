@@ -1,4 +1,5 @@
 <ion-view view-title="{{ 'COMPARAR.TITULO' | translate }}" name="dashboard-view">
+ <form name="formComparar">
   <ion-content class="padding">
     <div class="list">
   
@@ -18,9 +19,13 @@
 
     
   <label class="item item-input">
-    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa1">
+    <input name="iDtasa1"  ng-pattern="/^[0-9]*$/"  class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa1" required>
     </label>
+    <div ng-messages="formComparar.iDtasa1.$error" style="color:maroon" role="alert" ng-if='formComparar.iDtasa1.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+        </div>
 
+        
     <div class="item range range-positive">
      
   
@@ -43,8 +48,12 @@
 <div class="row">
     <div class="col col-50">
         <label class="item item-input">
-    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa2">
+    <input ng-pattern="/^[0-9]*$/"  name="iDtasa2" class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa2" required>
     </label>
+       <div  ng-messages="formComparar.iDtasa2.$error" style="color:maroon" role="alert" ng-if='formComparar.iDtasa2.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+        </div>
+
     <div class="item range range-positive">
     <input type="range"  min="0" max="100"   ng-model="datos.tasa2" ng-change="init()" ng-init="datos.tasa2=12">
   </div>
@@ -64,8 +73,11 @@
 <div class="row">
     <div class="col col-50">
         <label class="item item-input">
-    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa3">
+    <input ng-pattern="/^[0-9]*$/"  name="iDtasa3" class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa3" required>
     </label>
+    <div ng-messages="formComparar.iDtasa3.$error" style="color:maroon" role="alert" ng-if='formComparar.iDtasa3.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+        </div>
     <div class="item range range-positive">
     <input type="range"  min="0" max="100"   ng-model="datos.tasa3" ng-change="init()" ng-init="datos.tasa3=11">
   </div>
@@ -85,11 +97,15 @@
 <div class="row">
     <div class="col col-50">
        <label class="item item-input">
-    <input class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa4">
+    <input ng-pattern="/^[0-9]*$/"  name="iDtasa4" class="text-center" type="text" placeholder="{{ 'COMPARAR.TASA' | translate }}" ng-model="datos.tasa4" required>
     </label>
+    <div ng-messages="formComparar.iDtasa4.$error" style="color:maroon" role="alert" ng-if='formComparar.iDtasa4.$touched'>
+                 <ng-messages-include src="templates/error-messages.html"/>
+        </div>
     <div class="item range range-positive">
     <input type="range"  min="0" max="100"   ng-model="datos.tasa4" ng-change="init()" ng-init="datos.tasa4=10">
   </div>
+  
   </div>
   <div class="col col-25 text-center">
  <h5 class="title">{{formatearValoresMoneda(obtenerCuota(datos,datos.tasa4))}} </h5>
@@ -148,4 +164,5 @@
 
   </div>
   </ion-content>
+ </form>
 </ion-view>
