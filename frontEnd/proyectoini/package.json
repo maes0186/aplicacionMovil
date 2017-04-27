@@ -1,7 +1,7 @@
 {
-  "name": "proyectoini",
-  "version": "1.1.1",
-  "description": "proyectoini: An Ionic project",
+  "name": "calculocredito",
+  "version": "0.0.1",
+  "description": "calculocredito: Un proyecto para calcular creditos",
   "dependencies": {
     "angular-chart.js": "^1.0.3",
     "gulp": "^3.5.6",
