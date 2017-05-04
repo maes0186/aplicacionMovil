@@ -1,9 +1,9 @@
 {
   "name": "calculocredito",
   "app_id": "",
-  "watch": [
-    "sass",
-    "watch"
+  "gulpStartupTasks": [
+    
+  "sass"
   ],
   "watchPatterns": [
     "www/**/*",

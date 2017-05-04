@@ -1,0 +1,42 @@
+/* Empty. Add your own CSS if you like */
+.tabla .header .col {
+    background-color: $divisores;
+}
+
+.tabla .col {
+    border: solid 1px $divisores;
+    border-bottom-style: none;
+    border-right-style: none;
+    
+}
+
+.tabla .bloqueado{
+    background-color:beige;
+}
+.tabla .colorCabecera {
+    background-color: $divisores;
+}
+
+.tabla .col:last-child {
+    border-right: solid 1px $divisores;
+}
+
+.tabla .row:last-child .col {
+    border-bottom: solid 1px $divisores;
+}
+.tabla .textoPequeno {
+    font-size: 70%;
+}
+.tabla .textoMediano {
+    font-size: 80%;
+}
+/* Empty. Add your own CSS if you like */
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}

@@ -17,18 +17,14 @@ $dark:                            #444 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 
-$colorPestanas:                       #387ef5 !default;
+$colorPestanas:                     green  !default;
 
-$divisores:                       #deeaee !default
+$divisores:                       #deeaee !default;
 
-.bar-positive, tabs-positive>.tabs{
-background-color: $colorPestanas !important;
-border-color: $colorPestanas;
-}
-.tabs{
-background-color: $colorPestanas !important;
-border-color: $colorPestanas;
-}
+
+$positive: $colorPestanas;
+
+
 .item-divider.item{
   background-color: $divisores !important;
 border-color: $divisores;  
@@ -39,5 +35,9 @@ border-color: $divisores;
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 // Include all of Ionic
+
 @import "www/lib/ionic/scss/ionic";
+//Scss propios
+@import "www/scssPropios/_main.scss";
+
 

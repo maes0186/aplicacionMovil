@@ -49,7 +49,7 @@
         "VALOR_CON_SEGURO": "Valor cuota con seguro:"
     },
     "COMPARAR": {
-        "TITULO": "Comparaciones",
+        "TITULO": "Comparaciones entre tasas",
         "TASA_ANUAL": "Tasa Anual (%)",
         "CUOTA": "Cuota ($)",
         "BANCO_ENTIDAD": "Banco o Entidad",
@@ -58,7 +58,7 @@
         "BANCO2": "Banco2",
         "BANCO3": "Banco3",
         "BANCO4": "Banco4",
-        "COMPARACION_TASAS": "COMPARACIONES ENTRE TASAS"
+        "COMPARACION_TASAS": "Resúmen diferencias entre tasas"
     },
     "MAIN":{
         "DATOS":"Datos",
@@ -81,5 +81,14 @@
         "PARRAFO11":"Reporte análisis financiero"
         
         
-    }
+    },
+
+"VALID":{
+    "VACIO":"El campo no debe ser vacio",
+    "MIN":"Este campo esta demasiado corto",
+    "MAX":"El campo no tiene el maximo de longitud",
+    "EMAIL":"Este dato no es válido",
+    "PARSE": "Este dato no es válido",
+    "PATTERN": "Este dato no es válido"
+}
 }
