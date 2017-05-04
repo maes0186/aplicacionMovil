@@ -1,11 +1,11 @@
 (function () {
     angular.module('starter').controller('ReportesCtrl',
-        ['$scope', '$ionicModal', 'reporteFactory', '$cordovaFile', '$cordovaSocialSharing', ReportesCtrl])
+        ['$scope', '$ionicModal', 'reporteFactory', '$cordovaFile', '$cordovaSocialSharing','$translate', ReportesCtrl])
 
     //.run(function($ionicPlatform,MessagesService) {
     // $ionicPlatform.ready(function() {
 
-    function ReportesCtrl($scope, $ionicModal, reporteFactory, $cordovaFile, $cordovaSocialSharing) {
+    function ReportesCtrl($scope, $ionicModal, reporteFactory, $cordovaFile, $cordovaSocialSharing,$translate) {
         //    $ionicPlatform.ready(function() {
 
         var vm = this;
@@ -75,28 +75,25 @@
 
                     $cordovaSocialSharing
                         .shareViaEmail(
-                        "Estimado/a " + $scope.datos.rNombre + ", este es un reporte  del analisis realizado del estimado de la financiación de su inmueble \n"
-                        + "\n"
-                        + "\n"
-                        + "Valor del apartamento: " + $scope.datos.fVApartamento + "\n"
-                        + "Valor de la tasa de interés: " + $scope.datos.tasa + "% " + "\n"
-                        + "Valor de la cuota: " + $scope.datos.fCuota + "\n"
+                        $translate.instant('MAIL.ESTIMADO')+"  "+ $scope.datos.rNombre + $translate.instant('MAIL.PARRAFO1') + $scope.datos.fVApartamento + "\n"
+                        +$translate.instant('MAIL.PARRAFO2') + $scope.datos.tasa + "% " + "\n"
+                        +$translate.instant('MAIL.PARRAFO3') + $scope.datos.fCuota + "\n"
                         + "---------------------------------------------" + "\n"
-                        + "Valor del abono: " + $scope.datos.fVAbono + "\n"
-                        + "Valor del apartamento: " + $scope.datos.fVApartamento + "\n"
-                        + "Valor de la cuota inicial: " + $scope.datos.fValorInicial + "\n"
-                        + "Valor faltante de la cuota inicial: " + $scope.datos.fFaltanteIni + "\n"
+                        + $translate.instant('MAIL.PARRAFO4') + $scope.datos.fVAbono + "\n"
+                        + $translate.instant('MAIL.PARRAFO5') + $scope.datos.fVApartamento + "\n"
+                        + $translate.instant('MAIL.PARRAFO6') + $scope.datos.fValorInicial + "\n"
+                        + $translate.instant('MAIL.PARRAFO7') + $scope.datos.fFaltanteIni + "\n"
                         + "---------------------------------------------" + "\n"
-                        + "Valor del seguro: " + $scope.datos.fSeguros + "\n"
-                        + "Valor de la cuota con seguro: " + $scope.datos.fCoutaSeguros + "\n"
-                        + "Valor de las escrituras: " + $scope.datos.fEscrituras + "\n"
-                        , "Reporte análisis financiero",
+                        + $translate.instant('MAIL.PARRAFO8') + $scope.datos.fSeguros + "\n"
+                        + $translate.instant('MAIL.PARRAFO9') + $scope.datos.fCoutaSeguros + "\n"
+                        + $translate.instant('MAIL.PARRAFO10') + $scope.datos.fEscrituras + "\n"
+                        , $translate.instant('MAIL.PARRAFO11'),
 
                         $scope.datos.rEmail, null, null, rutaCompleta)
                         .then(function (result) {
                             // Success!
                         }, function (err) {
-                            alert("Error enviando archivo" + err);
+                            alert("Error send file" + err);
                         });
 
 

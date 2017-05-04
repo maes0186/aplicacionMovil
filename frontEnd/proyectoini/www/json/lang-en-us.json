@@ -25,7 +25,7 @@
         "ENVIAR": "Enviar"
     },
     "DASHBOARD": {
-        "TITULO": "Tu Inversión",
+        "TITULO": "Datos Basicos",
         "VALOR_FINANCIAMIENTO": "Valores para el financiamiento ",
         "VALOR_INMUEBLE": "Valor del inmueble",
         "NUMERO_MESES": "Número de meses",
@@ -65,5 +65,21 @@
         "CALCULOS":"Cálculos",
         "COMPARAR":"Comparar",
         "REPORTES":"Reportes"
+    },
+    "MAIL":{
+        "ESTIMADO":"Estimado/a",
+        "PARRAFO1":", este es un reporte  del analisis realizado del estimado de la financiación de su inmueble \n\n\nValor del apartamento: ",
+        "PARRAFO2":"Valor de la tasa de interés: ",
+        "PARRAFO3":"Valor de la cuota: ",
+        "PARRAFO4":"Valor del abono: ",
+        "PARRAFO5":"Valor del apartamento: ",
+        "PARRAFO6":"Valor de la cuota inicial: ",
+        "PARRAFO7":"Valor faltante de la cuota inicial: ",
+        "PARRAFO8":"Valor del seguro: ",
+        "PARRAFO9":"Valor de la cuota con seguro: ",
+        "PARRAFO10":"Valor de las escrituras: ",
+        "PARRAFO11":"Reporte análisis financiero"
+        
+        
     }
 }

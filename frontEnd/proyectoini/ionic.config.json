@@ -1,7 +1,7 @@
 {
   "name": "calculocredito",
   "app_id": "",
-  "gulpStartupTasks": [
+  "watch": [
     "sass",
     "watch"
   ],
