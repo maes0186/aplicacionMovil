@@ -1,10 +1,6 @@
 {
   "name": "calculocredito",
   "app_id": "",
-  "gulpStartupTasks": [
-    
-  "sass"
-  ],
   "watchPatterns": [
     "www/**/*",
     "!www/lib/**/*",
